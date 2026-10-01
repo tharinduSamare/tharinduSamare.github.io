@@ -129,6 +129,7 @@ body {
 }
 
 body {
+	position: relative;
 	background-color: var(--gray-999);
 	color: var(--gray-200);
 	font-family: var(--font-body);

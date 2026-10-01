@@ -6,6 +6,7 @@ import Footer from '../components/Footer.astro';
 // Component Imports
 import MainHead from '../components/MainHead.astro';
 import Nav from '../components/Nav.astro';
+import Background from '../components/Background.astro';
 
 interface Props {
 	title?: string | undefined;
@@ -20,10 +21,15 @@ const { title, description } = Astro.props;
 		<MainHead title={title} description={description} />
 	</head>
 	<body>
+		
 		<div class="stack backgrounds">
-			<Nav />
-			<slot />
-			<Footer />
+			<Background />
+
+			<div class="page-content">
+				<Nav />
+				<slot />
+				<Footer />
+			</div>
 		</div>
 
 		<script>
@@ -89,6 +95,9 @@ const { title, description } = Astro.props;
 			}
 
 			.backgrounds {
+				position: relative;
+				z-index: 0;
+
 				min-height: 100%;
 				isolation: isolate;
 				background:
@@ -104,6 +113,11 @@ const { title, description } = Astro.props;
 					/*header1*/ var(--bg-svg-blend-mode),
 					/*header2*/ normal,
 					/*base*/ normal;
+			}
+
+			.page-content {
+				position: relative;
+				z-index: 1;
 			}
 			@media (forced-colors: active) {
 				/* Deactivate custom backgrounds for high contrast users. */
