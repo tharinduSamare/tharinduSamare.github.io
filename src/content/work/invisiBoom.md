@@ -33,4 +33,4 @@ I would like to sincerely thank [M.Sc. Tobias Jauch](https://www.linkedin.com/in
 If you are interested in the design and implementation, you can check out the project here: [link](https://github.com/RPTU-EIS/InvisiBOOM)
 
 ![Original BOOM implementation](/assets/images/invisiBOOM/BOOM_implementation.png)
-![Original BOOM implementation](/assets/images/invisiBOOM/InvisiBOOM_implementation.png)
+![Invisi BOOM implementation](/assets/images/invisiBOOM/InvisiBOOM_implementation.png)
