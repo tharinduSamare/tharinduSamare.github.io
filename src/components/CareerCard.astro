@@ -1,0 +1,214 @@
+---
+interface Props {
+	company: string;
+	role: string;
+	period: string;
+	type: string;
+	description: string;
+	skills: string[];
+    highlights?: string[];
+	url?: string;
+	side?: 'left' | 'right';
+}
+
+const {
+	company,
+	role,
+	period,
+	type,
+	description,
+	skills,
+    highlights,
+	url,
+	side = 'left',
+} = Astro.props;
+
+const isEducation = type === 'Education';
+---
+
+<article class={`career-card ${side} ${isEducation ? 'education' : 'work'}`}>
+	<div class="career-card-inner">
+		<div class="career-meta">
+			<span class="career-period">{period}</span>
+
+			<span class="career-type">
+				{isEducation ? 'Education' : 'Work'}
+			</span>
+		</div>
+
+		<h3 class="career-role">{role}</h3>
+
+		{url ? (
+			<a
+				class="career-company"
+				href={url}
+				target="_blank"
+				rel="noopener noreferrer"
+			>
+				{company}
+				<span class="external-icon">↗</span>
+			</a>
+		) : (
+			<p class="career-company">{company}</p>
+		)}
+
+		<p class="career-description">
+			{description}
+		</p>
+
+        {
+        highlights && highlights.length > 0 && (
+            <ul class="career-highlights">
+                {highlights.map((highlight) => (
+                    <li>{highlight}</li>
+                ))}
+            </ul>
+        )
+    }
+
+		{skills.length > 0 && (
+			<div class="career-skills">
+				{skills.map((skill) => (
+					<span class="skill">{skill}</span>
+				))}
+			</div>
+		)}
+	</div>
+</article>
+
+<style>
+	.career-card {
+		position: relative;
+		width: calc(50% - 2.5rem);
+		padding: 1.4rem;
+		border: 1px solid color-mix(in srgb, var(--gray-700) 55%, transparent);
+		border-radius: 1rem;
+		background: color-mix(in srgb, var(--gray-999) 78%, transparent);
+		backdrop-filter: blur(10px);
+		-webkit-backdrop-filter: blur(10px);
+		box-shadow: var(--shadow-sm);
+		transition:
+			transform 0.25s ease,
+			border-color 0.25s ease,
+			box-shadow 0.25s ease;
+	}
+
+	.career-card:hover {
+		transform: translateY(-4px);
+		border-color: var(--accent-regular);
+		box-shadow: var(--shadow-md);
+	}
+
+	.career-card.left {
+		margin-right: auto;
+	}
+
+	.career-card.right {
+		margin-left: auto;
+	}
+
+	.career-card-inner {
+		display: flex;
+		flex-direction: column;
+		gap: 0.7rem;
+	}
+
+	.career-meta {
+		display: flex;
+		align-items: center;
+		gap: 0.6rem;
+		flex-wrap: wrap;
+	}
+
+	.career-period {
+		font-size: 0.8rem;
+		font-weight: 600;
+		color: var(--gray-400);
+	}
+
+	.career-type {
+		display: inline-flex;
+		align-items: center;
+		padding: 0.2rem 0.55rem;
+		border-radius: 999px;
+		font-size: 0.7rem;
+		font-weight: 600;
+		letter-spacing: 0.02em;
+		background: var(--accent-subtle-overlay);
+		color: var(--accent-dark);
+	}
+
+	.career-card.education .career-type {
+		background: color-mix(in srgb, #3b82f6 15%, transparent);
+		color: #60a5fa;
+	}
+
+	.career-role {
+		margin: 0;
+		font-size: 1.35rem;
+		line-height: 1.2;
+		color: var(--gray-100);
+	}
+
+	.career-company {
+		margin: 0;
+		font-size: 0.95rem;
+		font-weight: 600;
+		color: var(--accent-dark);
+		text-decoration: none;
+	}
+
+	.career-company:hover {
+		text-decoration: underline;
+	}
+
+	.career-company .external-icon {
+		margin-left: 0.2rem;
+	}
+
+	.career-description {
+		margin: 0;
+		font-size: 0.9rem;
+		line-height: 1.65;
+		color: var(--gray-300);
+	}
+
+    .career-highlights {
+	display: flex;
+	flex-direction: column;
+	gap: 0.35rem;
+	margin: 0.2rem 0 0;
+	padding-left: 1.1rem;
+	color: var(--gray-300);
+	font-size: 0.85rem;
+	line-height: 1.5;
+}
+
+    .career-highlights li::marker {
+        color: var(--accent-regular);
+    }
+
+	.career-skills {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.4rem;
+		margin-top: 0.25rem;
+	}
+
+	.skill {
+		padding: 0.25rem 0.55rem;
+		border-radius: 0.4rem;
+		font-size: 0.72rem;
+		color: var(--gray-300);
+		background: color-mix(in srgb, var(--gray-700) 45%, transparent);
+		border: 1px solid color-mix(in srgb, var(--gray-700) 60%, transparent);
+	}
+
+	@media (max-width: 50em) {
+		.career-card {
+			width: 100%;
+			margin-left: 0 !important;
+			margin-right: 0 !important;
+		}
+	}
+</style>

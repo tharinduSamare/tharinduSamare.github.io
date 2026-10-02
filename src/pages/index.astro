@@ -10,6 +10,7 @@ import Icon from '../components/Icon.astro';
 import Pill from '../components/Pill.astro';
 import PortfolioPreview from '../components/PortfolioPreview.astro';
 import Skills from '../components/Skills.astro';
+import Career from '../components/Career.astro';
 // Layout import — provides basic page elements: <head>, <nav>, <footer> etc.
 import BaseLayout from '../layouts/BaseLayout.astro';
 
@@ -27,8 +28,8 @@ const projects = (await getCollection('work'))
 		<div class="wrapper stack gap-8 lg:gap-20">
 			<header class="hero">
 				<Hero
-					title="Hello, my name is Tharindu Samarakoon"
-					tagline="I am an Embedded Systems and Digital Hardware Engineer specializing in FPGA, ASIC, RISC-V."
+					title="Hello, I'm Tharindu Samarakoon"
+					tagline="I am an Embedded Systems and Digital Hardware Engineer specializing in FPGA, ASIC & RISC-V."
 					align="start"
 				>
 					<div class="roles">
@@ -56,12 +57,15 @@ const projects = (await getCollection('work'))
 
 			<Skills />
 		</div>
+		
+		<Career />
 
 		<main class="wrapper stack gap-20 lg:gap-48">
 			<section class="section with-background with-cta">
 				<header class="section-header stack gap-2 lg:gap-4">
-					<h3>Projects</h3>
-					<p>Take a look below at some of my professional and educational work.</p>
+					<p class="section-label">/ Projects</p>
+					<h3>What I've built</h3>
+					<p>A selection of projects I've worked on throughout my studies and career.</p>
 				</header>
 
 				<div class="gallery">

@@ -1,0 +1,111 @@
+[
+    {
+    "company": "RPTU Kaiserslautern-Landau, Germany",
+    "role": "M.Sc. Embedded Computing Systems",
+    "period": "2024 - Present",
+    "type": "Education",
+    "description": "Master's studies focused on embedded computing, computer architecture, digital design, synthesis and optimization of microelectronic systems, and hardware/software co-design.",
+    "skills": [
+        "FPGA",
+        "ASIC",
+        "RISC-V",
+        "SystemVerilog",
+        "Computer Architecture",
+        "Digital Design"
+    ],
+    "url": "https://rptu.de/"
+  },
+  {
+    "company": "Integrated Automotive UK",
+    "role": "FPGA Design Engineer (Part-time)",
+    "period": "2023 - 2026",
+    "type": "Work",
+    "description": "Developed SoC-based FPGA hardware and firmware for high-precision analog signal analysis. Designed a dynamically configurable FFT pipeline on a Zynq-7020, integrating signal conditioning, a custom Hann window, downsampling, Xilinx FFT IP, and high-speed result processing.",
+    "skills": [
+        "SystemVerilog",
+        "FPGA",
+        "RTL Design",
+        "Vitis",
+        "Vivado",
+        "DMA",
+        "C",
+        "FreeRTOS"
+    ],
+    "url": "https://integratedautomotive.co.uk/"
+  },
+  {
+    "company": "SiFive, Inc. US",
+    "role": "Verification Engineer (Contract)",
+    "period": "2022 - 2024",
+    "type": "Work",
+    "description": "Worked on unit-level verification of RISC-V cache subsystems, focusing on cache coherency, consistency, and the TileLink2 protocol. Developed synthesizable assertions and automated emulation-based debugging and test monitoring workflows.",
+    "skills": [
+        "RISC-V",
+        "UVM",
+        "RTL",
+        "SystemVerilog",
+        "Chisel",
+        "TileLink2",
+        "Cache Coherency",
+        "Emulation"
+    ],
+    "url": "https://www.sifive.com/"
+  },
+  {
+    "company": "University of Moratuwa, Sri Lanka",
+    "role": "B.Sc. (Hons) Engineering - Electronics and Telecommunication Engineering",
+    "period": "2017 - 2022",
+    "type": "Education",
+    "description": "Studied Electronic and Telecommunication Engineering with a focus on electronics, digital systems, embedded systems, communications, and VLSI.",
+    "highlights": [
+        "CGPA: 4.01 / 4.20",
+        "First Class Honours",
+        "Dean's List: Semesters 1-8"
+    ],
+    "skills": [
+      "Digital Design",
+      "Embedded Systems",
+      "VLSI",
+      "RISC-V",
+      "Electronics",
+      "Microcontrollers",
+      "Telecommunication"
+    ],
+    "url": "https://uom.lk/"
+  },
+  {
+    "company": "Zone24x7 (Pvt) Ltd. Sri Lanka",
+    "role": "Trainee Associate Electronics Engineer",
+    "period": "2020",
+    "type": "Work",
+    "description": "Worked on embedded systems and wearable electronics, developing a 4-layer PCB for acquiring ECG, PPG, and EDA signals. Designed and tested signal-generation and sensor interfaces for a body area network research project focused on monitoring human physiological signals.",
+    "skills": [
+      "Electronics",
+      "Embedded Systems",
+      "PCB Design",
+      "C++",
+      "Altium Designer",
+      "Microcontrollers"
+    ],
+    "url": "https://zone24x7.com/"
+  },
+  {
+    "company": "Ananda College, Colombo-10, Sri Lanka",
+    "role": "G.C.E. Advanced Level - Physical Science",
+    "period": "2014 - 2016",
+    "type": "Education",
+    "description": "Completed Advanced Level studies in Mathematics, Physics, and Chemistry.",
+    "highlights": [
+        "4As in Mathematics, Physics, Chemistry & General English",
+        "Island Rank: 21",
+        "District Rank: 6",
+        "Z-Score: 2.7044"
+    ],
+    "skills": [
+        "Mathematics",
+        "Physics",
+        "Chemistry"
+    ],
+    "url": "https://www.anandacollege.edu.lk/"
+  }
+]
