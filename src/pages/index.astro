@@ -24,7 +24,7 @@ const projects = (await getCollection('work'))
 ---
 
 <BaseLayout>
-	<div class="stack gap-20 lg:gap-48">
+	<div class="stack gap-12 lg:gap-24">
 		<div class="wrapper stack gap-8 lg:gap-20">
 			<header class="hero">
 				<Hero
@@ -197,6 +197,10 @@ const projects = (await getCollection('work'))
 		max-width: 50ch;
 		font-size: var(--text-md);
 		color: var(--gray-300);
+	}
+
+	.section-header .section-label {
+		color: var(--accent-dark);
 	}
 
 	.section-header h3 {
