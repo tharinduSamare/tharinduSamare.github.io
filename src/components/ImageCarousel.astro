@@ -1,0 +1,169 @@
+---
+interface ImageItem {
+	src: string;
+	alt: string;
+}
+
+interface Props {
+	images: ImageItem[];
+	interval?: number;
+}
+
+const { images, interval = 5000 } = Astro.props;
+---
+
+<div class="carousel" data-interval={interval}>
+	<div class="slides">
+		{images.map((image, index) => (
+			<div class:list={['slide', { active: index === 0 }]}>
+				<img src={image.src} alt={image.alt} loading={index === 0 ? 'eager' : 'lazy'} />
+			</div>
+		))}
+	</div>
+
+	<div class="dots" aria-label="Choose photo">
+		{images.map((_, index) => (
+			<button
+				class:list={['dot', { active: index === 0 }]}
+				type="button"
+				aria-label={`Show photo ${index + 1}`}
+				aria-current={index === 0 ? 'true' : undefined}
+				data-index={index}
+			></button>
+		))}
+	</div>
+</div>
+
+<script>
+	const carousels = document.querySelectorAll<HTMLElement>('.carousel');
+
+	carousels.forEach((carousel) => {
+		const slides = carousel.querySelectorAll<HTMLElement>('.slide');
+		const dots = carousel.querySelectorAll<HTMLButtonElement>('.dot');
+		const interval = Number(carousel.dataset.interval) || 5000;
+
+		let current = 0;
+		let timer: ReturnType<typeof setInterval>;
+
+		function showSlide(index: number) {
+			slides[current].classList.remove('active');
+			dots[current].classList.remove('active');
+			dots[current].removeAttribute('aria-current');
+
+			current = index;
+
+			slides[current].classList.add('active');
+			dots[current].classList.add('active');
+			dots[current].setAttribute('aria-current', 'true');
+		}
+
+		function nextSlide() {
+			showSlide((current + 1) % slides.length);
+		}
+
+		function startTimer() {
+			clearInterval(timer);
+			timer = setInterval(nextSlide, interval);
+		}
+
+		dots.forEach((dot) => {
+			dot.addEventListener('click', () => {
+				showSlide(Number(dot.dataset.index));
+				startTimer();
+			});
+		});
+
+		startTimer();
+	});
+</script>
+
+<style>
+	.carousel {
+        width: 100%;
+        max-width: 100%;
+        margin: 1.5rem 0 0;
+    }
+
+	.slides {
+		position: relative;
+		width: 100%;
+		aspect-ratio: 16 / 9;
+		overflow: hidden;
+		border-radius: 1.5rem;
+		box-shadow: var(--shadow-md);
+		background: var(--gray-50);
+	}
+
+	.slide {
+		position: absolute;
+		inset: 0;
+		opacity: 0;
+		transition: opacity 0.7s ease;
+		pointer-events: none;
+	}
+
+	.slide.active {
+		opacity: 1;
+		pointer-events: auto;
+	}
+
+	.slide img {
+		display: block;
+		width: 100%;
+		height: 100%;
+		margin: 0;
+		object-fit: cover;
+		border-radius: 0;
+		box-shadow: none;
+	}
+
+	.dots {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: 0.5rem;
+		margin-top: 1rem;
+	}
+
+	.dot {
+		width: 0.55rem;
+		height: 0.55rem;
+		padding: 0;
+		border: 0;
+		border-radius: 50%;
+		background: var(--gray-500);
+		opacity: 0.5;
+		cursor: pointer;
+		transition:
+			transform 0.2s ease,
+			opacity 0.2s ease,
+			background 0.2s ease;
+	}
+
+	.dot:hover {
+		opacity: 1;
+		transform: scale(1.15);
+	}
+
+	.dot.active {
+		background: var(--accent-dark);
+		opacity: 1;
+		transform: scale(1.15);
+	}
+
+	@media (min-width: 50em) {
+		.carousel {
+			margin-top: 1.5rem;
+		}
+
+		.slides {
+			border-radius: 1.5rem;
+		}
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		.slide {
+			transition: none;
+		}
+	}
+</style>

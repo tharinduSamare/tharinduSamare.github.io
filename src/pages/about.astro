@@ -2,6 +2,7 @@
 import ContactCTA from '../components/ContactCTA.astro';
 import Hero from '../components/Hero.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
+import ImageCarousel from '../components/ImageCarousel.astro';
 ---
 
 <BaseLayout title="About | Tharindu Samarakoon" description="About Tharindu Samarakoon">
@@ -11,11 +12,52 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 				title="About"
 				tagline="Thanks for stopping by. Read below to learn more about myself and my background."
 			>
-				<img
+				<!-- <img
 					width="1553"
 					height="873"
 					src="/assets/images/tharindu/tharindu_with_friends.jpeg"
 					alt="Tharindu Samarakoon with friends"
+				/> -->
+
+				<ImageCarousel
+					images={[
+						{
+							src: '/assets/images/life/IMG_E2677_music.jpg',
+							alt: 'Playing music with Mit Karte Bitte',
+						},
+						{
+							src: '/assets/images/life/20251130_hike_freiburg.jpg',
+							alt: 'Hiking',
+						},
+						{
+							src: '/assets/images/life/tharindu_with_friends.jpeg',
+							alt: 'Hanging out with friends',
+						},
+						{
+							src: '/assets/images/life/VideoCapture_20260515-MTB.jpg',
+							alt: 'Mountain biking',
+						},
+						{
+							src: '/assets/images/life/bouldering.jpg',
+							alt: 'Bouldering',
+						},
+						{
+							src: '/assets/images/life/20260919_cycling_koblenz.jpg',
+							alt: 'Cycling',
+						},
+						{
+							src: '/assets/images/life/VideoCapture_20261002-calistanics.jpg',
+							alt: 'Calistanics-handstand',
+						},
+						{
+							src: '/assets/images/life/VideoCapture_20261002-calistanics2.jpg',
+							alt: 'Calistanics-backlever',
+						},
+						{
+							src: '/assets/images/life/VideoCapture_20261002-karting.jpg',
+							alt: 'Go Karting',
+						},
+					]}
 				/>
 			</Hero>
 
@@ -23,9 +65,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 				<h2 class="section-title">Background</h2>
 				<div class="content">
 					<p>
-						I’m Tharindu, originally from Sri Lanka, and I currently live in Kaiserslautern, Germany. 
-						I’m a Master's student at RPTU, and most of my time is spent between university, hardware projects, 
-						and trying to figure out how to make the things I build actually work. I’ve always been interested in electronics and computers, 
+						I'm Tharindu, originally from Sri Lanka, and I currently live in Kaiserslautern, Germany. 
+						I'm a Master's student at RPTU, and most of my time is spent between university, hardware projects, 
+						and trying to figure out how to make the things I build actually work. I've always been interested in electronics and computers, 
 						and I enjoy understanding how things work rather than just using them.
 					</p>
 				</div>
@@ -34,7 +76,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 				<h2 class="section-title">Education</h2>
 				<div class="content">
 					<p>
-						I’m currently studying Embedded Computing Systems at RPTU Kaiserslautern. Before coming to Germany, 
+						I'm currently studying Embedded Computing Systems at RPTU Kaiserslautern. Before coming to Germany, 
 						I studied Electronics and Telecommunication Engineering at the University of Moratuwa in Sri Lanka. 
 						During my studies, I became especially interested in digital systems and computer architecture, and that eventually led me 
 						towards FPGA design, processor design, and hardware development.
@@ -48,7 +90,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 						I have worked in the electronics and hardware field for several years. I started my professional career 
 						as an Electronics Engineer at Paraqum Technologies and later worked as a Verification Engineer with SiFive. 
 						Most of my work has been around digital design, verification, embedded systems, and computer architecture. 
-						These days, I’m spending more time designing hardware myself and learning more about FPGA and ASIC development.
+						These days, I'm spending more time designing hardware myself and learning more about FPGA and ASIC development.
 					</p>
 				</div>
 			</section>
@@ -59,12 +101,67 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 						Outside university and work, I like doing things that keep me away from a desk. Calistanics is my most favourite hobby.
 						I also enjoy mountain biking, downhill riding, cycling, hiking, and bouldering. 
 						I also like travelling and exploring new places whenever I get the chance. 
-						I’ve always been a bit curious about how things work too. I am also a guitarist. We friends in RPTU made our own music band "Mit Karte Bitte".
+						I've always been a bit curious about how things work too. I am also a guitarist. We friends in RPTU made our own music band "Mit Karte Bitte".
 						When I was a kid, I used to take apart toys, motors, batteries, 
 						and pretty much anything electronic just to see what was inside. I guess not much has changed since then.
 					</p>
 				</div>
 			</section>
+
+			<div class="about-carousel">
+				<ImageCarousel
+						images={[
+							{
+								src: '/assets/images/life/IMG-20190121-ENTC17_batch.jpg',
+								alt: 'ENTC17 batchmates at UoM',
+							},
+							{
+								src: '/assets/images/life/IMG-20190912-SLIIT_challange.jpg',
+								alt: 'SLIIT micromouse challenge',
+							},
+							{
+								src: '/assets/images/life/IMG-20190827-micromouse1.jpg',
+								alt: 'SLIIT micromouse: Jerry',
+							},
+							{
+								src: '/assets/images/life/IMG-20200515-micromouse.jpg',
+								alt: 'SLIIT micromouse: Jerry schematic',
+							},
+							{
+								src: '/assets/images/life/IMG-20201129-SLRC3.jpg',
+								alt: 'SLRC robotic challenge',
+							},
+							{
+								src: '/assets/images/life/IMG-20201129-SLRC1.jpg',
+								alt: 'SLRC robotic challenge',
+							},
+							{
+								src: '/assets/images/life/IMG-20201129-SLRC2.jpg',
+								alt: 'SLRC robotic challenge',
+							},
+							{
+								src: '/assets/images/life/20261002_hih.jpg',
+								alt: 'Hand in Hand donation event',
+							},
+							{
+								src: '/assets/images/life/IMG-20211110-robotics_modulel.jpg',
+								alt: 'Robotics module',
+							},
+							{
+								src: '/assets/images/life/IMG-20210607-SPCUP.jpg',
+								alt: 'IEEE SPCUP competition',
+							},
+							{
+								src: '/assets/images/life/IMG-20230114-hiking.jpg',
+								alt: 'Hiking in Sri Lanka',
+							},
+							{
+								src: '/assets/images/life/IMG-20230519-exploring.jpg',
+								alt: 'Yala National Park, Sri Lanka',
+							},
+						]}
+					/>
+			</div>
 		</main>
 
 		<ContactCTA />
@@ -77,6 +174,19 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 		flex-direction: column;
 		gap: 3.5rem;
 	}
+
+	.about :global(.hero) {
+		width: 100%;
+	}
+
+	.about :global(.hero) :global(.carousel) {
+		width: 100%;
+	}
+
+	.about-carousel {
+		width: 100%;
+	}
+
 
 	img {
 		margin-top: 1.5rem;
@@ -128,6 +238,10 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 		section {
 			display: contents;
 			font-size: var(--text-lg);
+		}
+
+		.about-carousel {
+			grid-column: 2 / 3;
 		}
 	}
 </style>
