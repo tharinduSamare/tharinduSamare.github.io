@@ -8,15 +8,56 @@ interface Props {
 const { data, id } = Astro.props.project;
 ---
 
-<a class="card" href={`/work/${id}`}>
-	<span class="title">{data.title}</span>
-	<img src={data.img} alt={data.img_alt || ''} loading="lazy" decoding="async" />
-</a>
+<div class="project-preview">
+	<a class="title" href={`/work/${id}`}>
+		{data.title}
+	</a>
+
+	<a class="card" href={`/work/${id}`}>
+		<img
+			src={data.img}
+			alt={data.img_alt || ''}
+			loading="lazy"
+			decoding="async"
+		/>
+	</a>
+</div>
 
 <style>
+	.project-preview {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+	}
+
+	.title {
+		display: inline-block;
+		width: fit-content;
+		margin: 0;
+		padding: 0.5rem 1rem;
+
+		background: var(--gray-900);
+		color: var(--gray-200);
+		border-radius: 0.375rem;
+
+		font-family: var(--font-brand);
+		font-size: var(--text-lg);
+		font-weight: 500;
+		line-height: 1.2;
+		text-decoration: none;
+
+		transition:
+			color var(--theme-transition),
+			transform var(--theme-transition);
+	}
+
+	/* Highlight title when hovering anywhere over the project */
+	.project-preview:hover .title {
+		color: var(--accent-dark);
+	}
+
 	.card {
-		display: grid;
-		grid-template: auto 1fr / auto 1fr;
+		display: block;
 		height: 11rem;
 		background: var(--gradient-subtle);
 		border: 1px solid var(--gray-800);
@@ -24,28 +65,18 @@ const { data, id } = Astro.props.project;
 		overflow: hidden;
 		box-shadow: var(--shadow-sm);
 		text-decoration: none;
-		font-family: var(--font-brand);
-		font-size: var(--text-lg);
-		font-weight: 500;
-		transition: box-shadow var(--theme-transition);
+		transition:
+			box-shadow var(--theme-transition),
+			transform var(--theme-transition);
 	}
 
 	.card:hover {
 		box-shadow: var(--shadow-md);
-	}
-
-	.title {
-		grid-area: 1 / 1 / 2 / 2;
-		z-index: 1;
-		margin: 0.5rem;
-		padding: 0.5rem 1rem;
-		background: var(--gray-999);
-		color: var(--gray-200);
-		border-radius: 0.375rem;
+		transform: translateY(-2px);
 	}
 
 	img {
-		grid-area: 1 / 1 / 3 / 3;
+		display: block;
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
@@ -55,10 +86,6 @@ const { data, id } = Astro.props.project;
 		.card {
 			height: 22rem;
 			border-radius: 1.5rem;
-		}
-
-		.title {
-			border-radius: 0.9375rem;
 		}
 	}
 </style>
