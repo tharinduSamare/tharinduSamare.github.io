@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 560" width="1600" height="560" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif">
+<rect width="1600" height="560" fill="#ffffff"/>
+<rect x="300" y="30" width="990" height="500" rx="24" fill="#f4f8fc" stroke="#7fa6d0" stroke-width="2.5" stroke-dasharray="12 8"/>
+<text x="324" y="70" font-size="21" font-weight="700" fill="#2c5a8c">NVIDIA Jetson AGX Xavier  ·  TensorRT  ·  ROS</text>
+<rect x="40" y="200" width="220" height="160" rx="16" fill="#0f2a4a" stroke="#0f2a4a" stroke-width="2"/>
+<text x="150.0" y="274.0" font-size="23" font-weight="700" fill="#fff" text-anchor="middle">Camera system</text>
+<text x="150.0" y="304.0" font-size="18" fill="#bcd6f0" text-anchor="middle">narrow + wide angle</text>
+<rect x="330" y="135" width="270" height="115" rx="16" fill="#d9eaf9" stroke="#9fc2e4" stroke-width="2"/>
+<text x="465.0" y="186.5" font-size="23" font-weight="700" fill="#12304f" text-anchor="middle">YOLOv5</text>
+<text x="465.0" y="216.5" font-size="18" fill="#3b5878" text-anchor="middle">batch of 2 frames</text>
+<rect x="650" y="135" width="270" height="115" rx="16" fill="#d9eaf9" stroke="#9fc2e4" stroke-width="2"/>
+<text x="785.0" y="186.5" font-size="23" font-weight="700" fill="#12304f" text-anchor="middle">Homography</text>
+<text x="785.0" y="216.5" font-size="18" fill="#3b5878" text-anchor="middle">merge far + near boxes</text>
+<rect x="970" y="135" width="270" height="115" rx="16" fill="#d9eaf9" stroke="#9fc2e4" stroke-width="2"/>
+<text x="1105.0" y="186.5" font-size="23" font-weight="700" fill="#12304f" text-anchor="middle">Kalman + SORT</text>
+<text x="1105.0" y="216.5" font-size="18" fill="#3b5878" text-anchor="middle">traffic light tracker</text>
+<rect x="330" y="345" width="270" height="115" rx="16" fill="#d9eaf9" stroke="#9fc2e4" stroke-width="2"/>
+<text x="465.0" y="396.5" font-size="23" font-weight="700" fill="#12304f" text-anchor="middle">UltraFast / LaneATT</text>
+<text x="465.0" y="426.5" font-size="18" fill="#3b5878" text-anchor="middle">lane detection</text>
+<rect x="650" y="345" width="270" height="115" rx="16" fill="#d9eaf9" stroke="#9fc2e4" stroke-width="2"/>
+<text x="785.0" y="396.5" font-size="23" font-weight="700" fill="#12304f" text-anchor="middle">Marking classifier</text>
+<text x="785.0" y="426.5" font-size="18" fill="#3b5878" text-anchor="middle">solid, dashed, double…</text>
+<rect x="970" y="345" width="270" height="115" rx="16" fill="#d9eaf9" stroke="#9fc2e4" stroke-width="2"/>
+<text x="1105.0" y="396.5" font-size="23" font-weight="700" fill="#12304f" text-anchor="middle">Kalman tracker</text>
+<text x="1105.0" y="426.5" font-size="18" fill="#3b5878" text-anchor="middle">lane departure warning</text>
+<text x="330" y="121" font-size="20" font-weight="700" fill="#0b7fd1">TRAFFIC LIGHTS</text>
+<text x="330" y="331" font-size="20" font-weight="700" fill="#0a8f6a">LANES</text>
+<path d="M604 192.5 L646 192.5" stroke="#12304f" stroke-width="3.5" fill="none"/>
+<path d="M646 192.5 L633.3937405670625 186.41048252244278" stroke="#12304f" stroke-width="3.5" fill="none"/>
+<path d="M646 192.5 L633.3937405670625 198.58951747755722" stroke="#12304f" stroke-width="3.5" fill="none"/>
+<path d="M924 192.5 L966 192.5" stroke="#12304f" stroke-width="3.5" fill="none"/>
+<path d="M966 192.5 L953.3937405670625 186.41048252244278" stroke="#12304f" stroke-width="3.5" fill="none"/>
+<path d="M966 192.5 L953.3937405670625 198.58951747755722" stroke="#12304f" stroke-width="3.5" fill="none"/>
+<path d="M604 402.5 L646 402.5" stroke="#12304f" stroke-width="3.5" fill="none"/>
+<path d="M646 402.5 L633.3937405670625 396.41048252244275" stroke="#12304f" stroke-width="3.5" fill="none"/>
+<path d="M646 402.5 L633.3937405670625 408.58951747755725" stroke="#12304f" stroke-width="3.5" fill="none"/>
+<path d="M924 402.5 L966 402.5" stroke="#12304f" stroke-width="3.5" fill="none"/>
+<path d="M966 402.5 L953.3937405670625 396.41048252244275" stroke="#12304f" stroke-width="3.5" fill="none"/>
+<path d="M966 402.5 L953.3937405670625 408.58951747755725" stroke="#12304f" stroke-width="3.5" fill="none"/>
+<path d="M264 250 L326 192.5" stroke="#12304f" stroke-width="3.5" fill="none"/>
+<path d="M326 192.5 L312.61605127499945 196.6073003940005" stroke="#12304f" stroke-width="3.5" fill="none"/>
+<path d="M326 192.5 L320.89776298226036 205.5371460609601" stroke="#12304f" stroke-width="3.5" fill="none"/>
+<path d="M264 310 L326 402.5" stroke="#12304f" stroke-width="3.5" fill="none"/>
+<path d="M326 402.5 L324.039558579597 388.63794137087973" stroke="#12304f" stroke-width="3.5" fill="none"/>
+<path d="M326 402.5 L313.922846523843 395.4188726947364" stroke="#12304f" stroke-width="3.5" fill="none"/>
+<rect x="1380" y="200" width="200" height="160" rx="16" fill="#0f2a4a" stroke="#0f2a4a" stroke-width="2"/>
+<text x="1480.0" y="274.0" font-size="23" font-weight="700" fill="#fff" text-anchor="middle">Mobile app</text>
+<text x="1480.0" y="304.0" font-size="18" fill="#bcd6f0" text-anchor="middle">traffic light ahead</text>
+<text x="1480" y="330" font-size="18" fill="#bcd6f0" text-anchor="middle">lane departure</text>
+<text x="1480" y="388" font-size="17" fill="#3b5878" text-anchor="middle">connected via USB</text>
+<path d="M1244 192.5 L1376 262" stroke="#12304f" stroke-width="3.5" fill="none"/>
+<path d="M1376 262 L1367.682420190115 250.73865611455747" stroke="#12304f" stroke-width="3.5" fill="none"/>
+<path d="M1376 262 L1362.0083957742527 261.51522047274216" stroke="#12304f" stroke-width="3.5" fill="none"/>
+<path d="M1244 402.5 L1376 300" stroke="#12304f" stroke-width="3.5" fill="none"/>
+<path d="M1376 300 L1362.3083146869878 302.92194340969314" stroke="#12304f" stroke-width="3.5" fill="none"/>
+<path d="M1376 300 L1369.7779488282279 312.5413746940218" stroke="#12304f" stroke-width="3.5" fill="none"/>
+</svg>
