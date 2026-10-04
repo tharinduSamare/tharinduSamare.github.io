@@ -27,7 +27,9 @@ const { title, description } = Astro.props;
 
 			<div class="page-content">
 				<Nav />
-				<slot />
+				<div class="page-content-inner">
+					<slot />
+				</div>
 				<Footer />
 			</div>
 		</div>
@@ -125,6 +127,16 @@ const { title, description } = Astro.props;
 					background: none;
 					background-blend-mode: none;
 					--bg-gradient-size: none;
+				}
+			}
+
+			.page-content-inner {
+				padding-top: 6rem;
+			}
+
+			@media (min-width: 50em) {
+				.page-content-inner {
+					padding-top: 7rem;
 				}
 			}
 		</style>

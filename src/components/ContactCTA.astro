@@ -1,46 +1,366 @@
 ---
-import CallToAction from './CallToAction.astro';
 import Icon from './Icon.astro';
+
+const email = 'tharindu.samare123@gmail.com';
 ---
 
-<aside>
-	<h2>Interested in working together?</h2>
-	<CallToAction href="mailto:tharindu.samare123@gmail.com">
-		Send Me a Message
-		<Icon icon="paper-plane-tilt" size="1.2em" />
-	</CallToAction>
-</aside>
+<section class="contact-section">
+	<div class="wrapper">
+
+		<header class="contact-header">
+			<p class="section-label">/ Contact</p>
+			<h2>Let's talk.</h2>
+			<p>
+				Have a project, an idea, or just want to get in touch?
+				You can find me through any of the channels below.
+			</p>
+		</header>
+
+		<div class="contact-cards">
+
+			<!-- Email -->
+			<div class="contact-card">
+				<div class="card-icon">
+					<Icon icon="envelope" size="1.5rem" />
+				</div>
+
+				<div class="card-content">
+					<span class="card-label">Email</span>
+
+					<div class="email-row">
+						<a href={`mailto:${email}`}>
+							{email}
+						</a>
+
+						<button
+							type="button"
+							class="copy-button"
+							data-email={email}
+							aria-label="Copy email address"
+							title="Copy email address"
+						>
+							<Icon icon="copy" size="1.1rem" />
+						</button>
+					</div>
+
+					<span class="copy-status" aria-live="polite"></span>
+				</div>
+			</div>
+
+			<!-- Location -->
+			<div class="contact-card">
+				<div class="card-icon">
+					<Icon icon="map-pin" size="1.5rem" />
+				</div>
+
+				<div class="card-content">
+					<span class="card-label">Location</span>
+					<p>Kaiserslautern, Germany</p>
+				</div>
+			</div>
+
+			<!-- Social -->
+			<div class="contact-card social-card">
+				<div class="card-icon">
+					<Icon icon="globe" size="1.5rem" />
+				</div>
+
+				<div class="card-content">
+					<span class="card-label">Where Else You Can Find Me</span>
+
+					<div class="social-links">
+
+						<a
+							href="https://github.com/tharinduSamare"
+							target="_blank"
+							rel="noopener noreferrer"
+							aria-label="GitHub"
+							title="GitHub"
+						>
+							<Icon icon="github-logo" size="1.4rem" />
+						</a>
+
+						<a
+							href="https://www.linkedin.com/in/tharindusamare/"
+							target="_blank"
+							rel="noopener noreferrer"
+							aria-label="LinkedIn"
+							title="LinkedIn"
+						>
+							<Icon icon="linkedin-logo" size="1.4rem" />
+						</a>
+
+						<a
+							href="https://www.youtube.com/@tharindusamarakoon2030"
+							target="_blank"
+							rel="noopener noreferrer"
+							aria-label="YouTube"
+							title="YouTube"
+						>
+							<Icon icon="youtube-logo" size="1.4rem" />
+						</a>
+
+						<a
+							href="https://www.instagram.com/tharindu.samarakoon.97/"
+							target="_blank"
+							rel="noopener noreferrer"
+							aria-label="Instagram"
+							title="Instagram"
+						>
+							<Icon icon="instagram-logo" size="1.4rem" />
+						</a>
+
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</section>
+
+<script>
+	const copyButton = document.querySelector<HTMLButtonElement>('.copy-button');
+	const copyStatus = document.querySelector<HTMLElement>('.copy-status');
+
+	copyButton?.addEventListener('click', async () => {
+		const email = copyButton.dataset.email;
+
+		if (!email) return;
+
+		try {
+			await navigator.clipboard.writeText(email);
+
+			if (copyStatus) {
+				copyStatus.textContent = 'Copied!';
+			}
+
+			setTimeout(() => {
+				if (copyStatus) {
+					copyStatus.textContent = '';
+				}
+			}, 2000);
+		} catch {
+			if (copyStatus) {
+				copyStatus.textContent = 'Unable to copy';
+			}
+		}
+	});
+</script>
 
 <style>
-	aside {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-		gap: 3rem;
+	.contact-section {
+		width: 100%;
 		border-top: 1px solid var(--gray-800);
-		border-bottom: 1px solid var(--gray-800);
-		padding: 5rem 1.5rem;
-		background-color: var(--gray-999_40);
-		box-shadow: var(--shadow-sm);
+		padding: 6rem 0;
+		background: var(--gray-999_40);
 	}
 
-	h2 {
-		font-size: var(--text-xl);
-		text-align: center;
-		max-width: 15ch;
+	/*
+	 * Uses the same .wrapper as Projects, About, etc.
+	 * This keeps the left and right edges aligned.
+	 */
+
+	.contact-header {
+		margin-bottom: 3rem;
+		max-width: 55rem;
+	}
+
+	.section-label {
+		margin: 0 0 0.75rem;
+		color: var(--accent-dark);
+		font-size: var(--text-sm);
+		font-weight: 600;
+	}
+
+	.contact-header h2 {
+		margin: 0;
+		font-size: var(--text-4xl);
+		line-height: 1.1;
+	}
+
+	.contact-header > p:last-child {
+		max-width: 55ch;
+		margin-top: 1.25rem;
+		color: var(--gray-400);
+		font-size: var(--text-md);
+		line-height: 1.7;
+	}
+
+	.contact-cards {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 1rem;
+	}
+
+	/*
+	 * Each contact item is a clearly visible card.
+	 */
+	.contact-card {
+		display: flex;
+		align-items: flex-start;
+		gap: 1.25rem;
+
+		min-height: 8rem;
+		padding: 1.5rem;
+
+		border: 1px solid var(--gray-700);
+		border-radius: 1rem;
+
+		background: var(--gray-999_40);
+		box-shadow: var(--shadow-sm);
+
+		transition:
+			border-color var(--theme-transition),
+			transform var(--theme-transition),
+			box-shadow var(--theme-transition);
+	}
+
+	.contact-card:hover {
+		border-color: var(--accent-regular);
+		transform: translateY(-2px);
+		box-shadow: var(--shadow-md);
+	}
+
+	.card-icon {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-shrink: 0;
+
+		width: 3rem;
+		height: 3rem;
+
+		border-radius: 0.75rem;
+
+		background: var(--accent-subtle-overlay);
+		color: var(--accent-regular);
+	}
+
+	.card-content {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+		min-width: 0;
+	}
+
+	.card-label {
+		color: var(--gray-500);
+		font-size: var(--text-sm);
+		font-weight: 600;
+	}
+
+	.card-content p {
+		margin: 0;
+		color: var(--gray-200);
+		font-size: var(--text-md);
+	}
+
+	.email-row {
+		display: flex;
+		align-items: center;
+		gap: 0.75rem;
+	}
+
+	.email-row a {
+		overflow-wrap: anywhere;
+		color: var(--gray-200);
+		font-size: var(--text-md);
+		text-decoration: none;
+	}
+
+	.email-row a:hover {
+		color: var(--accent-dark);
+	}
+
+	.copy-button {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex-shrink: 0;
+
+		width: 2.25rem;
+		height: 2.25rem;
+
+		border: 1px solid var(--gray-700);
+		border-radius: 0.5rem;
+
+		background: transparent;
+		color: var(--gray-400);
+
+		cursor: pointer;
+
+		transition:
+			background-color var(--theme-transition),
+			color var(--theme-transition),
+			border-color var(--theme-transition);
+	}
+
+	.copy-button:hover {
+		border-color: var(--accent-regular);
+		background: var(--accent-subtle-overlay);
+		color: var(--accent-dark);
+	}
+
+	.copy-status {
+		min-height: 1.2em;
+		color: var(--accent-dark);
+		font-size: var(--text-sm);
+	}
+
+	.social-links {
+		display: flex;
+		gap: 0.75rem;
+		margin-top: 0.25rem;
+		align-items: center;
+	}
+
+	.social-links a {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		width: 2.75rem;
+		height: 2.75rem;
+
+		border: 1px solid var(--gray-700);
+		border-radius: 50%;
+
+		color: var(--accent-regular);
+
+		transition:
+			background-color var(--theme-transition),
+			color var(--theme-transition),
+			border-color var(--theme-transition),
+			transform var(--theme-transition);
+	}
+
+	.social-links a :global(svg) {
+		pointer-events: none;
+	}
+
+	.social-links a:hover {
+		border-color: var(--accent-regular);
+		background: var(--accent-subtle-overlay);
+		color: var(--accent-dark);
+		transform: translateY(-2px);
 	}
 
 	@media (min-width: 50em) {
-		aside {
-			padding: 7.5rem;
-			flex-direction: row;
-			flex-wrap: wrap;
-			justify-content: space-between;
+		.contact-section {
+			padding: 7rem 0;
 		}
 
-		h2 {
+		.contact-header h2 {
 			font-size: var(--text-3xl);
-			text-align: left;
+		}
+
+		.contact-cards {
+			grid-template-columns: repeat(3, 1fr);
+			gap: 1.5rem;
+		}
+
+		.social-card {
+			grid-column: auto;
 		}
 	}
 </style>

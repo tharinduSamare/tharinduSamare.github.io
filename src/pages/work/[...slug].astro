@@ -31,7 +31,7 @@ const { Content } = await render(entry);
 		<div class="stack gap-15">
 			<header>
 				<div class="wrapper stack gap-2">
-					<a class="back-link" href="/work/"><Icon icon="arrow-left" /> Work</a>
+					<a class="back-link" href="/work/"><Icon icon="arrow-left" /> Projects</a>
 					<Hero title={entry.data.title} align="start">
 						<div class="details">
 							<div class="tags">
@@ -43,9 +43,9 @@ const { Content } = await render(entry);
 				</div>
 			</header>
 			<main class="wrapper">
-				<div class="stack gap-10 content">
-					{entry.data.img && <img src={entry.data.img} alt={entry.data.img_alt || ''} />}
-					<div class="content">
+				<div class="stack gap-10 project-content">
+					{entry.data.img && <img class="project-image" src={entry.data.img} alt={entry.data.img_alt || ''} />}
+					<div class="markdown-content">
 						<Content />
 					</div>
 				</div>
@@ -84,31 +84,40 @@ const { Content } = await render(entry);
 		max-width: 54ch;
 	}
 
-	.content {
-		max-width: 65ch;
+	.project-content {
+		width: 100%;
+	}
+
+	.project-image {
+		display: block;
+		width: min(100%, 55rem);
 		margin-inline: auto;
 	}
 
-	.content > :global(* + *) {
+	.markdown-content {
+		width: 100%;
+	}
+
+	.markdown-content > :global(* + *) {
 		margin-top: 1rem;
 	}
 
-	.content :global(h1),
-	.content :global(h2),
-	.content :global(h3),
-	.content :global(h4),
-	.content :global(h5) {
+	.markdown-content :global(h1),
+	.markdown-content :global(h2),
+	.markdown-content :global(h3),
+	.markdown-content :global(h4),
+	.markdown-content :global(h5) {
 		margin: 1.5rem 0;
 	}
 
-	.content :global(img) {
+	.markdown-content :global(img) {
 		border-radius: 1.5rem;
 		box-shadow: var(--shadow-sm);
 		background: var(--gradient-subtle);
 		border: 1px solid var(--gray-800);
 	}
 
-	.content :global(blockquote) {
+	.markdown-content :global(blockquote) {
 		font-size: var(--text-lg);
 		font-family: var(--font-brand);
 		font-weight: 600;
@@ -119,7 +128,7 @@ const { Content } = await render(entry);
 	}
 
 	.back-link,
-	.content :global(a) {
+	.markdown-content :global(a) {
 		text-decoration: 1px solid underline transparent;
 		text-underline-offset: 0.25em;
 		transition: text-decoration-color var(--theme-transition);
@@ -127,8 +136,8 @@ const { Content } = await render(entry);
 
 	.back-link:hover,
 	.back-link:focus,
-	.content :global(a:hover),
-	.content :global(a:focus) {
+	.markdown-content :global(a:hover),
+	.markdown-content :global(a:focus) {
 		text-decoration-color: currentColor;
 	}
 
@@ -143,7 +152,7 @@ const { Content } = await render(entry);
 			gap: 2.5rem;
 		}
 
-		.content :global(blockquote) {
+		.markdown-content :global(blockquote) {
 			font-size: var(--text-2xl);
 		}
 	}

@@ -137,6 +137,11 @@ body {
 	line-height: 1.5;
 }
 
+html {
+	scroll-behavior: smooth;
+	scroll-padding-top: 7rem;
+}
+
 *,
 *::after,
 *::before {

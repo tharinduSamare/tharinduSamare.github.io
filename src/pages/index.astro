@@ -13,6 +13,7 @@ import Skills from '../components/Skills.astro';
 import Career from '../components/Career.astro';
 // Layout import — provides basic page elements: <head>, <nav>, <footer> etc.
 import BaseLayout from '../layouts/BaseLayout.astro';
+import ImageCarousel from '../components/ImageCarousel.astro';
 
 // Content Fetching: List four most recent work projects
 const projects = (await getCollection('work'))
@@ -73,8 +74,8 @@ const projects = (await getCollection('work'))
 		
 		<Career />
 
-		<main class="wrapper stack gap-20 lg:gap-48">
-			<section class="section with-background with-cta">
+		<main class="wrapper stack gap-20 lg:gap-0">
+			<section id="projects" class="section with-background with-cta">
 				<header class="section-header stack gap-2 lg:gap-4">
 					<p class="section-label">/ Projects</p>
 					<h3>What I've built</h3>
@@ -95,6 +96,79 @@ const projects = (await getCollection('work'))
 					<div class="projects-cta">
 						<CallToAction href="/work/">
 							View All
+							<Icon icon="arrow-right" size="1.2em" />
+						</CallToAction>
+					</div>
+				</div>
+			</section>
+
+			<!-- About preview -->
+			<section id="about" class="about-preview">
+				<div class="about-preview-content">
+					<header class="section-header stack gap-2 lg:gap-4">
+						<p class="section-label">/ About</p>
+						<h3>A little more about me</h3>
+					</header>
+
+					<div class="about-preview-text">
+						<p>
+							I'm an Embedded Systems and Digital Hardware Engineer with a strong
+							interest in digital design, computer architecture, RISC-V, FPGA and
+							ASIC development.
+						</p>
+
+						<p>
+							Outside of hardware, I enjoy mountain biking, bouldering, playing
+							music and exploring new places.
+						</p>
+					</div>
+
+					<div class="about-preview-carousel">
+						<ImageCarousel
+							images={[
+							{
+								src: '/assets/images/life/IMG_E2677_music.jpg',
+								alt: 'Playing music with Mit Karte Bitte',
+							},
+							{
+								src: '/assets/images/life/20251130_hike_freiburg.jpg',
+								alt: 'Hiking',
+							},
+							{
+								src: '/assets/images/life/tharindu_with_friends.jpeg',
+								alt: 'Hanging out with friends',
+							},
+							{
+								src: '/assets/images/life/VideoCapture_20260515-MTB.jpg',
+								alt: 'Mountain biking',
+							},
+							{
+								src: '/assets/images/life/bouldering.jpg',
+								alt: 'Bouldering',
+							},
+							{
+								src: '/assets/images/life/20260919_cycling_koblenz.jpg',
+								alt: 'Cycling',
+							},
+							{
+								src: '/assets/images/life/VideoCapture_20261002-calistanics.jpg',
+								alt: 'Calisthenics - handstand',
+							},
+							{
+								src: '/assets/images/life/VideoCapture_20261002-calistanics2.jpg',
+								alt: 'Calisthenics - back lever',
+							},
+							{
+								src: '/assets/images/life/VideoCapture_20261002-karting.jpg',
+								alt: 'Go karting',
+							},
+							]}
+						/>
+					</div>
+
+					<div class="about-cta">
+						<CallToAction href="/about/">
+							View More
 							<Icon icon="arrow-right" size="1.2em" />
 						</CallToAction>
 					</div>
@@ -130,7 +204,7 @@ const projects = (await getCollection('work'))
 		display: flex;
 		justify-content: center;
 		margin-top: 2rem;
-		margin-bottom: 2rem;
+		margin-bottom: 1rem;
 	}
 
 	.cv-button {
@@ -282,5 +356,84 @@ const projects = (await getCollection('work'))
 
 	/* ====================================================== */
 
+	/* ====================================================== */
+	/* About preview */
 
+	.about-preview {
+		position: relative;
+		padding: 4rem 0;
+		}
+
+	.about-preview::before {
+		/* keep your existing ::before styles */
+	}
+
+	.about-preview-content {
+		display: flex;
+		flex-direction: column;
+		gap: 1.5rem;
+		width: 100%;
+		max-width: 65rem;
+		margin-inline: auto;
+	}
+
+	.about-preview .section-header {
+		justify-self: unset;
+		text-align: left;
+		max-width: none;
+	}
+
+	.about-preview .section-header h3 {
+		margin: 0;
+	}
+
+	.about-preview-text {
+		width: 100%;
+		max-width: none;
+		color: var(--gray-300);
+		font-size: var(--text-md);
+		line-height: 1.7;
+	}
+
+	.about-preview-text p + p {
+		margin-top: 1rem;
+	}
+
+	.about-preview-carousel {
+		width: 100%;
+		max-width: 55rem;
+		margin: 1rem auto 0;
+	}
+
+	.about-cta {
+		display: flex;
+		justify-content: center;
+		margin-top: 1rem;
+	}
+
+	@media (min-width: 50em) {
+		.about-preview {
+			padding: 5rem 2rem;
+		}
+
+		.about-preview-content {
+			max-width: 100%;
+		}
+
+		.about-preview .section-header {
+			text-align: left;
+		}
+
+		.about-preview .section-header h3 {
+			font-size: var(--text-4xl);
+		}
+
+		.about-preview-text {
+			max-width: 65rem;
+		}
+
+		.about-preview-carousel {
+			max-width: 55rem;
+		}
+	}
 </style>
