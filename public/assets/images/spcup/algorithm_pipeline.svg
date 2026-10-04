@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 560" width="1600" height="560" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif">
+<rect width="1600" height="560" fill="#ffffff"/>
+<text x="60" y="62" font-size="21" font-weight="700" fill="#0b7fd1">1 · CHANNEL ESTIMATION</text>
+<rect x="60" y="90" width="320" height="120" rx="16" fill="#d9eaf9" stroke="#9fc2e4" stroke-width="2"/>
+<text x="220.0" y="144.0" font-size="25" font-weight="700" fill="#12304f" text-anchor="middle">Pilot configurations</text>
+<text x="220.0" y="176.0" font-size="19" fill="#3b5878" text-anchor="middle">recorded received signals</text>
+<rect x="450" y="90" width="320" height="120" rx="16" fill="#d9eaf9" stroke="#9fc2e4" stroke-width="2"/>
+<text x="610.0" y="144.0" font-size="25" font-weight="700" fill="#12304f" text-anchor="middle">Linear model</text>
+<text x="610.0" y="176.0" font-size="19" fill="#3b5878" text-anchor="middle">Y = XB + E</text>
+<rect x="840" y="90" width="320" height="120" rx="16" fill="#d9eaf9" stroke="#9fc2e4" stroke-width="2"/>
+<text x="1000.0" y="144.0" font-size="25" font-weight="700" fill="#12304f" text-anchor="middle">Least-squares fit</text>
+<text x="1000.0" y="176.0" font-size="19" fill="#3b5878" text-anchor="middle">65 unknowns per tap</text>
+<rect x="1230" y="90" width="320" height="120" rx="16" fill="#0f2a4a" stroke="#0f2a4a" stroke-width="2"/>
+<text x="1390.0" y="144.0" font-size="25" font-weight="700" fill="#fff" text-anchor="middle">Channel model f</text>
+<text x="1390.0" y="176.0" font-size="19" fill="#bcd6f0" text-anchor="middle">configuration → data rate</text>
+<path d="M384 150.0 H446" stroke="#12304f" stroke-width="3.5" fill="none" stroke-linejoin="round"/>
+<path d="M446 150.0 L433.39374056706254 143.91048252244278" stroke="#12304f" stroke-width="3.5" fill="none"/>
+<path d="M446 150.0 L433.39374056706254 156.08951747755722" stroke="#12304f" stroke-width="3.5" fill="none"/>
+<path d="M774 150.0 H836" stroke="#12304f" stroke-width="3.5" fill="none" stroke-linejoin="round"/>
+<path d="M836 150.0 L823.3937405670625 143.91048252244278" stroke="#12304f" stroke-width="3.5" fill="none"/>
+<path d="M836 150.0 L823.3937405670625 156.08951747755722" stroke="#12304f" stroke-width="3.5" fill="none"/>
+<path d="M1164 150.0 H1226" stroke="#12304f" stroke-width="3.5" fill="none" stroke-linejoin="round"/>
+<path d="M1226 150.0 L1213.3937405670624 143.91048252244278" stroke="#12304f" stroke-width="3.5" fill="none"/>
+<path d="M1226 150.0 L1213.3937405670624 156.08951747755722" stroke="#12304f" stroke-width="3.5" fill="none"/>
+<text x="60" y="318" font-size="21" font-weight="700" fill="#0a8f6a">2 · CONFIGURATION SEARCH</text>
+<rect x="60" y="380" width="320" height="120" rx="16" fill="#d9eaf9" stroke="#9fc2e4" stroke-width="2"/>
+<text x="220.0" y="434.0" font-size="25" font-weight="700" fill="#12304f" text-anchor="middle">Genetic algorithm</text>
+<text x="220.0" y="466.0" font-size="19" fill="#3b5878" text-anchor="middle">periodic strip patterns</text>
+<rect x="450" y="380" width="320" height="120" rx="16" fill="#d9eaf9" stroke="#9fc2e4" stroke-width="2"/>
+<text x="610.0" y="434.0" font-size="25" font-weight="700" fill="#12304f" text-anchor="middle">Gradient descent</text>
+<text x="610.0" y="466.0" font-size="19" fill="#3b5878" text-anchor="middle">tanh relaxation, Adam</text>
+<rect x="840" y="380" width="320" height="120" rx="16" fill="#0f2a4a" stroke="#0f2a4a" stroke-width="2"/>
+<text x="1000.0" y="434.0" font-size="25" font-weight="700" fill="#fff" text-anchor="middle">IRS configuration</text>
+<text x="1000.0" y="466.0" font-size="19" fill="#bcd6f0" text-anchor="middle">4096 binary elements</text>
+<path d="M384 440.0 H446" stroke="#12304f" stroke-width="3.5" fill="none" stroke-linejoin="round"/>
+<path d="M446 440.0 L433.39374056706254 433.91048252244275" stroke="#12304f" stroke-width="3.5" fill="none"/>
+<path d="M446 440.0 L433.39374056706254 446.08951747755725" stroke="#12304f" stroke-width="3.5" fill="none"/>
+<path d="M774 440.0 H836" stroke="#12304f" stroke-width="3.5" fill="none" stroke-linejoin="round"/>
+<path d="M836 440.0 L823.3937405670625 433.91048252244275" stroke="#12304f" stroke-width="3.5" fill="none"/>
+<path d="M836 440.0 L823.3937405670625 446.08951747755725" stroke="#12304f" stroke-width="3.5" fill="none"/>
+<path d="M1390 214 V270 H24 V440.0 H56" stroke="#12304f" stroke-width="3.5" fill="none" stroke-linejoin="round"/>
+<path d="M56 440.0 L43.39374056706252 433.91048252244275" stroke="#12304f" stroke-width="3.5" fill="none"/>
+<path d="M56 440.0 L43.39374056706252 446.08951747755725" stroke="#12304f" stroke-width="3.5" fill="none"/>
+<text x="800" y="262" font-size="18" fill="#3b5878" text-anchor="middle">used as the objective for the search</text>
+<path d="M220 374 V348 H1000 V374" stroke="#12304f" stroke-width="3.5" fill="none" stroke-linejoin="round"/>
+<path d="M1000 376 L1006.0895174775573 363.39374056706254" stroke="#12304f" stroke-width="3.5" fill="none"/>
+<path d="M1000 376 L993.9104825224427 363.39374056706254" stroke="#12304f" stroke-width="3.5" fill="none"/>
+<text x="610.0" y="338" font-size="18" font-weight="700" fill="#0a8f6a" text-anchor="middle">Fast mode: genetic algorithm only</text>
+</svg>
