@@ -6,16 +6,10 @@ const LIMIT = 6;
 ---
 
 <section class="career-section wrapper" id="career">
-	<div class="career-header">
-		<div>
-			<p class="section-label">/ Career</p>
-
-			<h2>Where I've been</h2>
-		</div>
-
-		<p class="career-intro">
-			A quick look at my education and professional experience.
-		</p>
+	<div class="career-header stack gap-2 lg:gap-4">
+		<p class="section-label">/ Career</p>
+		<h2>Where I've been</h2>
+		<p>A quick look at my education and professional experience.</p>
 	</div>
 
 	<div class="career-filters" role="tablist" aria-label="Filter career timeline">
@@ -143,11 +137,15 @@ const LIMIT = 6;
 	}
 
 	.career-header {
-		display: flex;
-		align-items: end;
-		justify-content: space-between;
-		gap: 2rem;
 		margin-bottom: 2rem;
+	}
+
+	.career-header h2 {
+		margin: 0;
+	}
+
+	.career-header p:last-child {
+		color: var(--gray-400);
 	}
 
 	.section-label {
@@ -157,18 +155,6 @@ const LIMIT = 6;
 		letter-spacing: 0.08em;
 		text-transform: uppercase;
 		color: var(--accent-dark);
-	}
-
-	.career-header h2 {
-		margin: 0;
-	}
-
-	.career-intro {
-		max-width: 25rem;
-		margin: 0;
-		color: var(--gray-400);
-		font-size: 0.95rem;
-		line-height: 1.6;
 	}
 
 	.career-filters {

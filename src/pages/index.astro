@@ -33,17 +33,23 @@ const projects = (await getCollection('work'))
 					align="start"
 				>
 					<div class="roles">
-						<Pill><Icon icon="code" size="1.33em" /> FPGA</Pill>
-						<Pill><Icon icon="code" size="1.33em" /> ASIC</Pill>
-						<Pill><Icon icon="code" size="1.33em" /> RISC-V</Pill>
+						<Pill><Icon icon="cpu" size="1.33em" /> FPGA</Pill>
+						<Pill><Icon icon="cpu" size="1.33em" /> ASIC</Pill>
+						<Pill><Icon icon="computer" size="1.33em" /> RISC-V</Pill>
 						<Pill><Icon icon="code" size="1.33em" /> RTL</Pill>
-						<Pill><Icon icon="code" size="1.33em" /> UVM</Pill>
+						<Pill><Icon icon="shield-check" size="1.33em" /> UVM</Pill>
 					</div>
+
 					<div class="roles">
 						<Pill><Icon icon="code" size="1.33em" /> SystemVerilog</Pill>
 						<Pill><Icon icon="code" size="1.33em" /> Verilog</Pill>
-						<Pill><Icon icon="code" size="1.33em" /> C++</Pill>
-						<Pill><Icon icon="code" size="1.33em" /> Python</Pill>
+						<Pill><Icon icon="terminal-window" size="1.33em" /> C++</Pill>
+						<Pill><Icon icon="terminal-window" size="1.33em" /> Python</Pill>
+					</div>
+
+					<div class="roles">
+						<Pill><Icon icon="computer" size="1.33em" /> Computer Architecture</Pill>
+						<Pill><Icon icon="computer" size="1.33em" /> Digital Design</Pill>
 					</div>
 				</Hero>
 
@@ -78,13 +84,13 @@ const projects = (await getCollection('work'))
 							))
 						}
 					</Grid>
-				</div>
 
-				<div class="cta">
-					<CallToAction href="/work/">
-						View All
-						<Icon icon="arrow-right" size="1.2em" />
-					</CallToAction>
+					<div class="projects-cta">
+						<CallToAction href="/work/">
+							View All
+							<Icon icon="arrow-right" size="1.2em" />
+						</CallToAction>
+					</div>
 				</div>
 			</section>
 
@@ -133,6 +139,13 @@ const projects = (await getCollection('work'))
 		object-position: top;
 		border-radius: 1.5rem;
 		box-shadow: var(--shadow-md);
+	}
+
+	.projects-cta {
+		display: flex;
+		justify-content: center;
+		margin-top: 2rem;
+		margin-bottom: 2rem;
 	}
 
 	@media (min-width: 50em) {
