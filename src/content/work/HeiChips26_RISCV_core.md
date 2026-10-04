@@ -5,6 +5,8 @@ img: /assets/images/HeiChips26/RISCV_custom_core_architecture.png
 img_alt: HeiChips26_SOC_architecture
 description: |
   Task specific RISC-V CPU to drive MMIO Accelerator
+start_date: "2026/08"
+end_date: "2026/09"
 tags:
   - FPGA
   - Area Optimization

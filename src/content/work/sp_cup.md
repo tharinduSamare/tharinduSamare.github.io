@@ -5,6 +5,8 @@ img: /assets/images/spcup/spCup2021_task.jpeg
 img_alt: RV32I pipeline processor architecture
 description: |
   Configuring an Intelligent Reflecting Surface for Wireless Communications
+start_date: "2021/04"
+end_date: "2021/06"
 tags:
   - SystemVerilog
   - Chisel

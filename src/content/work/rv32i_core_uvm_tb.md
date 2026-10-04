@@ -5,6 +5,8 @@ img: /assets/images/rv32i_core_uvm_tb/processor_architecture.png
 img_alt: RV32I pipeline processor architecture
 description: |
   RV32I processor with UVM testbench to support running (simplified) riscv-tests
+start_date: "2025/06"
+end_date: "2025/10"
 tags:
   - SystemVerilog
   - Chisel

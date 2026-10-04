@@ -64,7 +64,7 @@ const projects = (await getCollection('work'))
 					alt="Portrait of Tharindu Samarakoon"
 					width="480"
 					height="620"
-					src="/assets/images/tharindu/tharindu_samarakoon.jpg"
+					src="/assets/images/tharindu/tharindu_samarakoon2.jpg"
 				/>
 			</header>
 
@@ -100,28 +100,6 @@ const projects = (await getCollection('work'))
 					</div>
 				</div>
 			</section>
-
-			<!-- <section class="section with-background bg-variant">
-				<header class="section-header stack gap-2 lg:gap-4">
-					<h3>Mentions</h3>
-					<p>
-						I have been fortunate enough to receive praise for my work in several publications. Take
-						a look below to learn more.
-					</p>
-				</header>
-
-				<div class="gallery">
-					<Grid variant="small">
-						{
-							['Medium', 'BuzzFeed', 'The Next Web', 'awwwards.', 'TechCrunch'].map((brand) => (
-								<li class="mention-card">
-									<p>{brand}</p>
-								</li>
-							))
-						}
-					</Grid>
-				</div>
-			</section> -->
 		</main>
 
 		<ContactCTA />
@@ -304,23 +282,5 @@ const projects = (await getCollection('work'))
 
 	/* ====================================================== */
 
-	.mention-card {
-		display: flex;
-		height: 7rem;
-		justify-content: center;
-		align-items: center;
-		text-align: center;
-		border: 1px solid var(--gray-800);
-		border-radius: 1.5rem;
-		color: var(--gray-300);
-		background: var(--gradient-subtle);
-		box-shadow: var(--shadow-sm);
-	}
 
-	@media (min-width: 50em) {
-		.mention-card {
-			border-radius: 1.5rem;
-			height: 9.5rem;
-		}
-	}
 </style>

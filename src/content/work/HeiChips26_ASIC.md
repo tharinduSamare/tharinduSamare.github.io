@@ -5,6 +5,8 @@ img: /assets/images/HeiChips26/DNA_Sequence_Align_SOC_block_diagram.png
 img_alt: HeiChips26_SOC_architecture
 description: |
   ASIC accelerator for DNA Sequence Alignment
+start_date: "2026/08"
+end_date: "2026/09"
 tags:
   - ASIC
   - Librelane

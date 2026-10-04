@@ -5,6 +5,8 @@ img: /assets/images/bsc_fyp/self_driving_simple.png
 img_alt: RV32I pipeline processor architecture
 description: |
   Road Sign, Traffic Light and Static Object Detection for Self-Driving
+start_date: "2021/09"
+end_date: "2022/02"
 tags:
   - ROS
   - NVIDIA Jetson AGX Xavier
