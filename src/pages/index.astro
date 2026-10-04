@@ -51,6 +51,13 @@ const projects = (await getCollection('work'))
 						<Pill><Icon icon="computer" size="1.33em" /> Computer Architecture</Pill>
 						<Pill><Icon icon="computer" size="1.33em" /> Digital Design</Pill>
 					</div>
+					
+					<div class="cv-button">
+						<a href="/assets/cv/Tharindu_Samarakoon_CV.pdf" target="_blank" rel="noopener noreferrer">
+							<Icon icon="file-pdf" size="1.1em" />
+							View CV
+						</a>
+					</div>
 				</Hero>
 
 				<img
@@ -146,6 +153,47 @@ const projects = (await getCollection('work'))
 		justify-content: center;
 		margin-top: 2rem;
 		margin-bottom: 2rem;
+	}
+
+	.cv-button {
+		display: flex;
+		justify-content: center;
+		margin-top: 1.5rem;
+	}
+
+	.cv-button a {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.5rem;
+
+		padding: 0.7rem 1.3rem;
+
+		border: 1px solid var(--accent-regular);
+		border-radius: 0.75rem;
+
+		background: var(--gray-50);
+		color: var(--accent-regular);
+
+		font-family: var(--font-brand);
+		font-weight: 500;
+		text-decoration: none;
+
+		box-shadow: var(--shadow-sm);
+
+		transition:
+			background var(--theme-transition),
+			color var(--theme-transition),
+			border-color var(--theme-transition),
+			transform var(--theme-transition),
+			box-shadow var(--theme-transition);
+	}
+
+	.cv-button a:hover {
+		background: var(--accent-regular);
+		color: var(--accent-text-over);
+		border-color: var(--accent-regular);
+		transform: translateY(-2px);
+		box-shadow: var(--shadow-md);
 	}
 
 	@media (min-width: 50em) {
