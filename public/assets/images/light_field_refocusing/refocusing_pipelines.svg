@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 640" width="1600" height="640" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif">
+<rect width="1600" height="640" fill="#fff"/>
+<text x="40" y="44" font-size="22" font-weight="700" fill="#0b7fd1">DENSE LIGHT FIELD</text>
+<rect x="40" y="64" width="268" height="120" rx="16" fill="#d9eaf9" stroke="#9fc2e4" stroke-width="2"/>
+<text x="174.0" y="120.0" font-size="22" font-weight="700" fill="#12304f" text-anchor="middle">Select ROIs</text>
+<text x="174.0" y="148.0" font-size="16" fill="#3b5878" text-anchor="middle">on the middle view</text>
+<path d="M312 124.0 H344" stroke="#12304f" stroke-width="3.5"/><path d="M333 116.0 L344 124.0 L333 132.0" fill="none" stroke="#12304f" stroke-width="3.5"/>
+<rect x="348" y="64" width="268" height="120" rx="16" fill="#d9eaf9" stroke="#9fc2e4" stroke-width="2"/>
+<text x="482.0" y="120.0" font-size="22" font-weight="700" fill="#12304f" text-anchor="middle">Depth map</text>
+<text x="482.0" y="148.0" font-size="16" fill="#3b5878" text-anchor="middle">epipolar image analysis</text>
+<path d="M620 124.0 H652" stroke="#12304f" stroke-width="3.5"/><path d="M641 116.0 L652 124.0 L641 132.0" fill="none" stroke="#12304f" stroke-width="3.5"/>
+<rect x="656" y="64" width="268" height="120" rx="16" fill="#d9eaf9" stroke="#9fc2e4" stroke-width="2"/>
+<text x="790.0" y="120.0" font-size="22" font-weight="700" fill="#12304f" text-anchor="middle">α mask</text>
+<text x="790.0" y="148.0" font-size="16" fill="#3b5878" text-anchor="middle">per ROI, Gaussian-smoothed</text>
+<path d="M928 124.0 H960" stroke="#12304f" stroke-width="3.5"/><path d="M949 116.0 L960 124.0 L949 132.0" fill="none" stroke="#12304f" stroke-width="3.5"/>
+<rect x="964" y="64" width="268" height="120" rx="16" fill="#d9eaf9" stroke="#9fc2e4" stroke-width="2"/>
+<text x="1098.0" y="120.0" font-size="22" font-weight="700" fill="#12304f" text-anchor="middle">Shift-and-sum</text>
+<text x="1098.0" y="148.0" font-size="16" fill="#3b5878" text-anchor="middle">once per unique α, regions joined</text>
+<path d="M1236 124.0 H1268" stroke="#12304f" stroke-width="3.5"/><path d="M1257 116.0 L1268 124.0 L1257 132.0" fill="none" stroke="#12304f" stroke-width="3.5"/>
+<rect x="1272" y="64" width="268" height="120" rx="16" fill="#0f2a4a" stroke="#0f2a4a" stroke-width="2"/>
+<text x="1406.0" y="120.0" font-size="22" font-weight="700" fill="#fff" text-anchor="middle">Refocused image</text>
+<text x="1406.0" y="148.0" font-size="16" fill="#bcd6f0" text-anchor="middle">in- and out-of-focus regions</text>
+<text x="40" y="336" font-size="22" font-weight="700" fill="#0a8f6a">SPARSE (CROSS-SHAPED) LIGHT FIELD</text>
+<rect x="40" y="356" width="268" height="120" rx="16" fill="#d9eaf9" stroke="#9fc2e4" stroke-width="2"/>
+<text x="174.0" y="412.0" font-size="22" font-weight="700" fill="#12304f" text-anchor="middle">Select ROIs</text>
+<text x="174.0" y="440.0" font-size="16" fill="#3b5878" text-anchor="middle">on the middle view</text>
+<path d="M312 416.0 H344" stroke="#12304f" stroke-width="3.5"/><path d="M333 408.0 L344 416.0 L333 424.0" fill="none" stroke="#12304f" stroke-width="3.5"/>
+<rect x="348" y="356" width="268" height="120" rx="16" fill="#d9eaf9" stroke="#9fc2e4" stroke-width="2"/>
+<text x="482.0" y="412.0" font-size="22" font-weight="700" fill="#12304f" text-anchor="middle">α search</text>
+<text x="482.0" y="440.0" font-size="16" fill="#3b5878" text-anchor="middle">MS-SSIM vs the middle view</text>
+<path d="M620 416.0 H652" stroke="#12304f" stroke-width="3.5"/><path d="M641 408.0 L652 416.0 L641 424.0" fill="none" stroke="#12304f" stroke-width="3.5"/>
+<rect x="656" y="356" width="268" height="120" rx="16" fill="#d9eaf9" stroke="#9fc2e4" stroke-width="2"/>
+<text x="790.0" y="412.0" font-size="22" font-weight="700" fill="#12304f" text-anchor="middle">Shift-and-sum</text>
+<text x="790.0" y="440.0" font-size="16" fill="#3b5878" text-anchor="middle">α mask, regions joined</text>
+<path d="M928 416.0 H960" stroke="#12304f" stroke-width="3.5"/><path d="M949 408.0 L960 416.0 L949 424.0" fill="none" stroke="#12304f" stroke-width="3.5"/>
+<rect x="964" y="356" width="268" height="120" rx="16" fill="#d9eaf9" stroke="#9fc2e4" stroke-width="2"/>
+<text x="1098.0" y="412.0" font-size="22" font-weight="700" fill="#12304f" text-anchor="middle">U-Net restoration</text>
+<text x="1098.0" y="440.0" font-size="16" fill="#3b5878" text-anchor="middle">removes ghosting artifacts</text>
+<path d="M1236 416.0 H1268" stroke="#12304f" stroke-width="3.5"/><path d="M1257 408.0 L1268 416.0 L1257 424.0" fill="none" stroke="#12304f" stroke-width="3.5"/>
+<rect x="1272" y="356" width="268" height="120" rx="16" fill="#0f2a4a" stroke="#0f2a4a" stroke-width="2"/>
+<text x="1406.0" y="412.0" font-size="22" font-weight="700" fill="#fff" text-anchor="middle">Refocused image</text>
+<text x="1406.0" y="440.0" font-size="16" fill="#bcd6f0" text-anchor="middle">in- and out-of-focus regions</text>
+<text x="800" y="560" font-size="19" fill="#3b5878" text-anchor="middle">ROI = region of interest picked by the user · α = refocus depth for a region · both pipelines run on the GPU with PyTorch</text>
+</svg>

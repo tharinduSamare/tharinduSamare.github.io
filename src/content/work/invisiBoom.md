@@ -1,5 +1,5 @@
 ---
-title: InvisiBOOM
+title: InvisiBOOM RISCV CPU
 publishDate: 2026-08-22 00:00:00
 img: /assets/images/invisiBOOM/InvisiBOOM_implementation.png
 img_alt: Invisi_BOOM LSU architecture
@@ -20,7 +20,7 @@ Spectre attacks are hardware side-channel attacks that exploit speculative execu
 
 [InvisiSpec](https://ieeexplore.ieee.org/document/8574559) is one proposed solution, introduced by Hennessy et al. at MICRO 2018. Instead of allowing speculative loads to directly affect the cache hierarchy, InvisiSpec keeps the data fetched by speculative loads in a buffer that remains invisible to the cache hierarchy until the corresponding instructions become non-speculative. The CPU can use the data directly from the buffer. This approach can provide protection against speculative-execution side channels with relatively low performance overhead. Under the supervision of [M.Sc. Tobias Jauch](https://www.linkedin.com/in/tobias-jauch-a4b063185/), I implemented a simplified version of InvisiSpec on the [Berkeley Out-of-Order RISC-V Processor](https://boom-core.org/) (BOOM).
 
-The result is InvisiBOOM.
+The result is **InvisiBOOM**.
 
 **To the best of my knowledge, InvisiBOOM is the first real implementation of InvisiSpec on a real-world, widely used open-source out-of-order processor.** InvisiBOOM successfully runs the complete RISC-V test suite as well as randomized RISC-V torture tests, providing functional verification of the modified processor.
 

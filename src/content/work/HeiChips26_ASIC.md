@@ -1,7 +1,7 @@
 ---
-title: HeiChips26 Hackathon (ASIC)
+title: HeiChips26 Hackathon (ASIC Accelerator)
 publishDate: 2026-10-01 00:00:00
-img: /assets/images/HeiChips26/DNA_Sequence_Align_SOC_block_diagram.png
+img: /assets/images/HeiChips26/dna_sequencer_openroad_layout.png
 img_alt: HeiChips26_SOC_architecture
 description: |
   ASIC accelerator for DNA Sequence Alignment
@@ -13,7 +13,6 @@ tags:
   - Open-source
   - VLSI
   - SystemVerilog
-  - HeiChips26
 ---
 
 ## HeiChips26 DNA Sequence Alignment ASIC Accelerator

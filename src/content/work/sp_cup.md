@@ -8,10 +8,9 @@ description: |
 start_date: "2021/04"
 end_date: "2021/06"
 tags:
-  - SystemVerilog
-  - Chisel
-  - RISCV-32I
-  - UVM
+  - Matlab
+  - Resource Optimization
+  - Time Optimization
 ---
 
 ## Configuring an Intelligent Reflecting Surface for Wireless Communications
