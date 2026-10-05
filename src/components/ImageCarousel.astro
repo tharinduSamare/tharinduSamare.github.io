@@ -19,6 +19,22 @@ const { images, interval = 5000 } = Astro.props;
 				<img src={image.src} alt={image.alt} loading={index === 0 ? 'eager' : 'lazy'} />
 			</div>
 		))}
+
+		<button
+			class="arrow arrow-prev"
+			type="button"
+			aria-label="Previous photo"
+		>
+			<span aria-hidden="true">‹</span>
+		</button>
+
+		<button
+			class="arrow arrow-next"
+			type="button"
+			aria-label="Next photo"
+		>
+			<span aria-hidden="true">›</span>
+		</button>
 	</div>
 
 	<div class="dots" aria-label="Choose photo">
@@ -40,6 +56,8 @@ const { images, interval = 5000 } = Astro.props;
 	carousels.forEach((carousel) => {
 		const slides = carousel.querySelectorAll<HTMLElement>('.slide');
 		const dots = carousel.querySelectorAll<HTMLButtonElement>('.dot');
+		const prevButton = carousel.querySelector<HTMLButtonElement>('.arrow-prev');
+		const nextButton = carousel.querySelector<HTMLButtonElement>('.arrow-next');
 		const interval = Number(carousel.dataset.interval) || 5000;
 
 		let current = 0;
@@ -50,7 +68,7 @@ const { images, interval = 5000 } = Astro.props;
 			dots[current].classList.remove('active');
 			dots[current].removeAttribute('aria-current');
 
-			current = index;
+			current = (index + slides.length) % slides.length;
 
 			slides[current].classList.add('active');
 			dots[current].classList.add('active');
@@ -58,7 +76,11 @@ const { images, interval = 5000 } = Astro.props;
 		}
 
 		function nextSlide() {
-			showSlide((current + 1) % slides.length);
+			showSlide(current + 1);
+		}
+
+		function previousSlide() {
+			showSlide(current - 1);
 		}
 
 		function startTimer() {
@@ -73,16 +95,26 @@ const { images, interval = 5000 } = Astro.props;
 			});
 		});
 
+		prevButton?.addEventListener('click', () => {
+			previousSlide();
+			startTimer();
+		});
+
+		nextButton?.addEventListener('click', () => {
+			nextSlide();
+			startTimer();
+		});
+
 		startTimer();
 	});
 </script>
 
 <style>
 	.carousel {
-        width: 100%;
-        max-width: 100%;
-        margin: 1.5rem 0 0;
-    }
+		width: 100%;
+		max-width: 100%;
+		margin: 1.5rem 0 0;
+	}
 
 	.slides {
 		position: relative;
@@ -115,6 +147,69 @@ const { images, interval = 5000 } = Astro.props;
 		object-fit: cover;
 		border-radius: 0;
 		box-shadow: none;
+	}
+
+	/* Navigation arrows */
+	.arrow {
+		position: absolute;
+		top: 50%;
+		z-index: 5;
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		width: 2.75rem;
+		height: 2.75rem;
+		padding: 0;
+
+		border: 1px solid rgba(255, 255, 255, 0.25);
+		border-radius: 50%;
+
+		background: rgba(0, 0, 0, 0.2);
+		color: white;
+
+		font-size: 2rem;
+		font-family: Arial, sans-serif;
+		font-weight: 300;
+		line-height: 1;
+
+		cursor: pointer;
+
+		opacity: 0.18;
+		transform: translateY(-50%);
+
+		transition:
+			opacity 0.25s ease,
+			background 0.25s ease,
+			transform 0.25s ease,
+			border-color 0.25s ease;
+	}
+
+	.arrow-prev {
+		left: 1rem;
+	}
+
+	.arrow-next {
+		right: 1rem;
+	}
+
+	/* Make arrows clearly visible when hovering over the carousel */
+	.carousel:hover .arrow {
+		opacity: 0.75;
+	}
+
+	.arrow:hover {
+		opacity: 1;
+		background: rgba(0, 0, 0, 0.45);
+		border-color: rgba(255, 255, 255, 0.5);
+		transform: translateY(-50%) scale(1.08);
+	}
+
+	.arrow:focus-visible {
+		opacity: 1;
+		outline: 2px solid white;
+		outline-offset: 3px;
 	}
 
 	.dots {
@@ -163,6 +258,10 @@ const { images, interval = 5000 } = Astro.props;
 
 	@media (prefers-reduced-motion: reduce) {
 		.slide {
+			transition: none;
+		}
+
+		.arrow {
 			transition: none;
 		}
 	}
