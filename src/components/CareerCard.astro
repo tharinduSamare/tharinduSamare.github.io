@@ -6,7 +6,7 @@ interface Props {
 	type: string;
 	description: string;
 	skills: string[];
-    highlights?: string[];
+	highlights?: string[];
 	url?: string;
 	side?: 'left' | 'right';
 }
@@ -18,7 +18,7 @@ const {
 	type,
 	description,
 	skills,
-    highlights,
+	highlights,
 	url,
 	side = 'left',
 } = Astro.props;
@@ -56,15 +56,15 @@ const isEducation = type === 'Education';
 			{description}
 		</p>
 
-        {
-        highlights && highlights.length > 0 && (
-            <ul class="career-highlights">
-                {highlights.map((highlight) => (
-                    <li>{highlight}</li>
-                ))}
-            </ul>
-        )
-    }
+		{
+			highlights && highlights.length > 0 && (
+				<ul class="career-highlights">
+					{highlights.map((highlight) => (
+						<li>{highlight}</li>
+					))}
+				</ul>
+			)
+		}
 
 		{skills.length > 0 && (
 			<div class="career-skills">
@@ -76,24 +76,58 @@ const isEducation = type === 'Education';
 	</div>
 </article>
 
+<script>
+	const cards = document.querySelectorAll<HTMLElement>('.career-card');
+
+	const observer = new IntersectionObserver(
+		(entries) => {
+			entries.forEach((entry) => {
+				if (entry.isIntersecting) {
+					entry.target.classList.add('visible');
+					observer.unobserve(entry.target);
+				}
+			});
+		},
+		{
+			threshold: 0.15,
+		}
+	);
+
+	cards.forEach((card) => observer.observe(card));
+</script>
+
 <style>
 	.career-card {
 		position: relative;
 		width: calc(50% - 2.5rem);
 		padding: 1.4rem;
+
+		/* Initial state for scroll animation */
+		opacity: 0;
+		transform: translateY(30px);
+
 		border: 1px solid color-mix(in srgb, var(--gray-700) 55%, transparent);
 		border-radius: 1rem;
 		background: color-mix(in srgb, var(--gray-999) 78%, transparent);
 		backdrop-filter: blur(10px);
 		-webkit-backdrop-filter: blur(10px);
 		box-shadow: var(--shadow-sm);
+
 		transition:
-			transform 0.25s ease,
+			opacity 0.7s ease,
+			transform 0.7s ease,
 			border-color 0.25s ease,
 			box-shadow 0.25s ease;
 	}
 
-	.career-card:hover {
+	/* Visible state after entering the viewport */
+	.career-card.visible {
+		opacity: 1;
+		transform: translateY(0);
+	}
+
+	/* Hover only after the card has appeared */
+	.career-card.visible:hover {
 		transform: translateY(-4px);
 		border-color: var(--accent-regular);
 		box-shadow: var(--shadow-md);
@@ -193,20 +227,20 @@ const isEducation = type === 'Education';
 		color: var(--gray-300);
 	}
 
-    .career-highlights {
-	display: flex;
-	flex-direction: column;
-	gap: 0.35rem;
-	margin: 0.2rem 0 0;
-	padding-left: 1.1rem;
-	color: var(--gray-300);
-	font-size: 0.85rem;
-	line-height: 1.5;
-}
+	.career-highlights {
+		display: flex;
+		flex-direction: column;
+		gap: 0.35rem;
+		margin: 0.2rem 0 0;
+		padding-left: 1.1rem;
+		color: var(--gray-300);
+		font-size: 0.85rem;
+		line-height: 1.5;
+	}
 
-    .career-highlights li::marker {
-        color: var(--accent-regular);
-    }
+	.career-highlights li::marker {
+		color: var(--accent-regular);
+	}
 
 	.career-skills {
 		display: flex;
@@ -229,6 +263,21 @@ const isEducation = type === 'Education';
 			width: 100%;
 			margin-left: 0 !important;
 			margin-right: 0 !important;
+		}
+	}
+
+	/* Respect users who prefer reduced motion */
+	@media (prefers-reduced-motion: reduce) {
+		.career-card {
+			opacity: 1;
+			transform: none;
+			transition:
+				border-color 0.25s ease,
+				box-shadow 0.25s ease;
+		}
+
+		.career-card.visible {
+			transform: none;
 		}
 	}
 </style>
