@@ -200,9 +200,9 @@ const projects = (await getCollection('work'))
 	}
 
 	.hero img {
-		aspect-ratio: 5 / 4;
-		object-fit: cover;
-		object-position: top;
+		width: 100%;
+		max-width: 30rem;
+		height: auto;
 		border-radius: 1.5rem;
 		box-shadow: var(--shadow-md);
 	}
@@ -270,9 +270,9 @@ const projects = (await getCollection('work'))
 		}
 
 		.hero img {
-			aspect-ratio: 3 / 4;
-			border-radius: 4.5rem;
-			object-fit: cover;
+			width: min(85vw, 24rem);
+			max-width: none;
+			margin-inline: auto;
 		}
 	}
 
