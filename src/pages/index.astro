@@ -14,6 +14,7 @@ import Career from '../components/Career.astro';
 // Layout import — provides basic page elements: <head>, <nav>, <footer> etc.
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ImageCarousel from '../components/ImageCarousel.astro';
+import CommunityPreview from '../components/CommunityPreview.astro';
 
 // Content Fetching: List four most recent work projects
 const projects = (await getCollection('work'))
@@ -108,6 +109,8 @@ const projects = (await getCollection('work'))
 					</div>
 				</div>
 			</section>
+
+			<CommunityPreview />
 
 			<!-- About preview -->
 			<section id="about" class="about-preview">

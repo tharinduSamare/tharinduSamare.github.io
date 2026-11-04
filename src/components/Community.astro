@@ -1,0 +1,367 @@
+
+---
+import ImageCarousel from './ImageCarousel.astro';
+import Icon from './Icon.astro';
+
+const communityImages = [
+  {
+    src: '/assets/images/rotaract/hih_3.png',
+    alt: 'Hand in Hand fundraising project',
+  },
+  {
+    src: '/assets/images/rotaract/hih_2.png',
+    alt: 'Hand in Hand fundraising project',
+  },
+  {
+    src: '/assets/images/rotaract/hih_4.png',
+    alt: 'Hand in Hand fundraising project',
+  },
+  {
+    src: '/assets/images/rotaract/grama_prabodhaya_1.png',
+    alt: 'Grama Prabodhaya computer laboratory project',
+  },
+  {
+    src: '/assets/images/rotaract/manusath_handa_1.png',
+    alt: 'Manusath Handa audiobook project',
+  },
+];
+---
+
+<section id="community-details" class="community-section">
+  <div class="wrapper">
+
+    <!-- Introduction -->
+    <header class="section-header">
+      <p class="section-label">/ Community & Leadership</p>
+      <h2>Making an impact beyond engineering</h2>
+      <p>
+        During my undergraduate years at the University of Moratuwa,
+        I was actively involved in the Rotaract Club of the University
+        of Moratuwa, contributing to community service initiatives
+        focused on healthcare, education, and social well-being.
+      </p>
+    </header>
+
+    <!-- Image Gallery -->
+    <section class="community-gallery">
+      <!-- <p class="section-label">/ Memories</p> -->
+      <!-- <h3>A few moments along the way</h3> -->
+
+      <div class="community-carousel">
+        <ImageCarousel images={communityImages} interval={5000} />
+      </div>
+
+      <!-- <p class="gallery-caption">
+        A few memories from my Rotaract journey.
+      </p> -->
+    </section>
+    
+
+    <!-- Hand in Hand -->
+    <section class="leadership-entry">
+      <div class="entry-heading">
+        <h3>Hand in Hand</h3>
+        <span class="period">2018 – 2020</span>
+      </div>
+
+      <p class="role">
+        Co-Chairperson (2018–19) · Director, Community Service Avenue (2019–20)
+      </p>
+
+      <p>
+        I served as a Co-Chairperson of <strong>Hand in Hand</strong>,
+        one of the club's flagship fundraising projects supporting
+        children receiving cancer treatment at the National Cancer
+        Hospital (Apeksha Hospital), Sri Lanka.
+      </p>
+
+      <p>
+        Through the collective efforts of our team, we raised
+        <strong>LKR 2,090,500</strong>, earning the <strong>Silver Award</strong> for
+        Most Outstanding Fundraiser at the Rotaract District 3220
+        Awards for 2018–19.
+      </p>
+
+      <p>
+        In the following year, I served as the Director of the
+        Community Service Avenue. The project went on to receive
+        the <strong>Gold Award</strong> for Most Outstanding Fundraiser for 2019–20.
+      </p>
+
+      <div class="achievement">
+        <p class="achievement-amount">LKR 2,090,500</p>
+        <p class="achievement-label">
+          Raised for the National Cancer Hospital
+        </p>
+        <p class="awards">
+          <span class="silver">Silver Award · 2018–19</span>
+          <span class="gold">Gold Award · 2019–20</span>
+        </p>
+      </div>
+
+      <a
+        class="project-link"
+        href="https://handinhand.rotaractmora.org/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Explore Hand in Hand <Icon icon="arrow-up-right" size="1em" />
+      </a>
+    </section>
+
+    <!-- Other Initiatives -->
+    <section class="other-initiatives">
+      <!-- <p class="section-label">/ More Community Work</p> -->
+      <h3>Other Initiatives</h3>
+
+      <article class="initiative">
+        <h4>Grama Prabodhaya <span>— Village Awakening · 2019–2020</span></h4>
+        <p>
+          Contributed to improving educational opportunities in
+          rural communities, including establishing a computer
+          laboratory for a rural school.
+        </p>
+        <a
+          href="https://blog.rotaractmora.org/gramaprabodhaya/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Read about the project <Icon icon="arrow-up-right" size="1em" />
+        </a>
+      </article>
+
+      <article class="initiative">
+        <h4>Manusath Handa <span>— Voice of Humanity · 2019–2020</span></h4>
+        <p>
+          Supported an initiative that made educational resources
+          more accessible to visually impaired students through
+          a collection of audiobooks.
+        </p>
+        <a
+          href="https://manusathhanda.rotaractmora.org/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Explore the project <Icon icon="arrow-up-right" size="1em" />
+        </a>
+      </article>
+    </section>
+
+  </div>
+</section>
+
+<style>
+  .community-section {
+    padding: 4rem 0;
+  }
+
+  /* Introduction */
+
+  .section-header {
+    max-width: 65rem;
+    margin-bottom: 4rem;
+    color: var(--gray-300);
+    font-size: var(--text-md);
+  }
+
+  .section-label {
+    margin-bottom: 0.5rem;
+    color: var(--accent-dark);
+    font-size: var(--text-sm);
+    font-weight: 600;
+  }
+
+  .section-header h2 {
+    margin: 0.75rem 0;
+    color: var(--gray-100);
+    font-size: var(--text-3xl);
+  }
+
+  .section-header > p:last-child {
+    max-width: 75ch;
+    line-height: 1.8;
+  }
+
+  /* Hand in Hand */
+
+  .leadership-entry {
+    margin-bottom: 4rem;
+  }
+
+  .entry-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .entry-heading h3,
+  .other-initiatives h3,
+  .community-gallery h3 {
+    margin: 0;
+    color: var(--gray-100);
+    font-size: var(--text-2xl);
+  }
+
+  .period {
+    color: var(--gray-400);
+    font-size: 0.85rem;
+  }
+
+  .role {
+    margin: 0.75rem 0 1.5rem;
+    color: var(--accent-dark);
+    font-size: 0.9rem;
+    font-weight: 600;
+  }
+
+  .leadership-entry > p:not(.role) {
+    max-width: 90ch;
+    color: var(--gray-300);
+    font-size: var(--text-md);
+    line-height: 1.8;
+  }
+
+  .leadership-entry strong {
+    color: var(--gray-100);
+  }
+
+  /* Achievement */
+
+  .achievement {
+    margin: 2rem 0;
+  }
+
+  .achievement-amount {
+    margin: 0;
+    color: var(--accent-dark);
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    font-weight: 700;
+  }
+
+  .achievement-label {
+    margin: 0.25rem 0 0;
+    color: var(--gray-400);
+    font-size: 0.9rem;
+  }
+
+  .awards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+    margin-top: 0.75rem;
+    color: var(--gray-300);
+    font-size: 0.85rem;
+  }
+
+  .silver {
+    color: #aeb8c5;
+  }
+
+  .gold {
+    color: #d6a63d;
+  }
+
+  /* Links */
+
+  .project-link,
+  .initiative a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: var(--accent-dark);
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .project-link:hover,
+  .initiative a:hover {
+    text-decoration: underline;
+  }
+
+  /* Other Initiatives */
+
+  .other-initiatives {
+    margin-bottom: 4.5rem;
+  }
+
+  .other-initiatives > h3,
+  .community-gallery > h3 {
+    margin-bottom: 1.75rem;
+  }
+
+  .initiative {
+    margin-bottom: 2rem;
+  }
+
+  .initiative h4 {
+    margin: 0;
+    color: var(--gray-100);
+    font-size: var(--text-xl);
+  }
+
+  .initiative h4 span {
+    color: var(--gray-400);
+    font-size: 0.9rem;
+    font-weight: 400;
+  }
+
+  .initiative p {
+    max-width: 80ch;
+    margin: 0.6rem 0;
+    color: var(--gray-300);
+    font-size: var(--text-md);
+    line-height: 1.8;
+  }
+
+  /* Gallery */
+
+  .community-gallery {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .community-gallery .section-label,
+  .community-gallery h3 {
+    width: 100%;
+  }
+
+  .community-gallery h3 {
+    margin-bottom: 1.75rem;
+  }
+
+  .community-carousel {
+    width: 100%;
+  }
+
+  .gallery-caption {
+    margin-top: 0.75rem;
+    color: var(--gray-500);
+    font-size: 0.85rem;
+    text-align: center;
+  }
+
+  @media (min-width: 50em) {
+    .community-section {
+      padding: 5rem 0;
+    }
+
+    .section-header h2 {
+      font-size: var(--text-4xl);
+    }
+
+    .entry-heading h3,
+    .other-initiatives h3,
+    .community-gallery h3 {
+      font-size: var(--text-3xl);
+    }
+
+    .community-carousel {
+      width: 60%;
+    }
+  }
+</style>

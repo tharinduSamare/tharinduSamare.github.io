@@ -1,0 +1,93 @@
+---
+import CallToAction from './CallToAction.astro';
+import Icon from './Icon.astro';
+import Community from '../components/Community.astro';
+---
+
+<section id="community" class="community-preview">
+  <div class="community-content">
+    <header class="section-header">
+      <p class="section-label">/ Community & Leadership</p>
+      <h3>Making an impact beyond engineering</h3>
+    </header>
+
+    <div class="community-text">
+      <p>
+        During my undergraduate years at the University of Moratuwa,
+        I was actively involved in the <strong>Rotaract Club</strong>, contributing to
+        community initiatives focused on healthcare, education, and
+        social well-being.
+      </p>
+
+      <p>
+        As Co-Chairperson of <strong>Hand in Hand</strong>, we raised <strong>LKR 2,090,500</strong> for the National Cancer Hospital
+        in Sri Lanka, earning the <strong>Silver Award</strong> for Most Outstanding Fundraiser in 2018–19. In the following year, as Director of
+        the Community Service Avenue, our efforts received the <strong>Gold Award</strong>.
+      </p>
+    </div>
+
+    <div class="community-cta">
+      <CallToAction href="/community/">
+        View More
+        <Icon icon="arrow-right" size="1.2em" />
+      </CallToAction>
+    </div>
+  </div>
+</section>
+
+<style>
+  .community-preview {
+    padding: 2rem 0;
+  }
+
+  .community-content {
+    display: grid;
+    gap: 1.5rem;
+  }
+
+  .section-header {
+    max-width: 50ch;
+    color: var(--gray-300);
+    font-size: var(--text-md);
+  }
+
+  .section-label {
+    color: var(--accent-dark);
+  }
+
+  .section-header h3 {
+    color: var(--gray-100);
+    font-size: var(--text-2xl);
+  }
+
+  .community-text {
+    max-width: 75ch;
+    color: var(--gray-300);
+    font-size: var(--text-md);
+    line-height: 1.7;
+  }
+
+  .community-cta {
+    display: flex;
+    justify-content: center;
+    margin-top: 0.5rem;
+  }
+
+  @media (min-width: 50em) {
+    .community-content {
+      grid-template-columns: 1fr 2fr;
+      gap: 3rem;
+      align-items: start;
+    }
+
+    .section-header h3 {
+      font-size: var(--text-3xl);
+    }
+
+    .community-cta {
+      grid-column: 1 / -1;
+      justify-content: center;
+      margin-top: 1.5rem;
+    }
+  }
+</style>

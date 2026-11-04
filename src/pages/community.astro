@@ -1,0 +1,68 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Community from '../components/Community.astro';
+---
+
+<BaseLayout
+  title="Community & Leadership"
+  description="My community service and leadership experience with the Rotaract Club of the University of Moratuwa."
+>
+  <!-- <div class="wrapper">
+    <header class="page-header">
+      <a href="/#community" class="back-link">← Back to home</a>
+      <p class="section-label">/ Community & Leadership</p>
+      <h1>Making an impact beyond engineering</h1>
+      <p>
+        A journey of leadership, teamwork, and contributing to
+        communities through Rotaract.
+      </p>
+    </header>
+  </div> -->
+
+  <Community />
+</BaseLayout>
+
+<style>
+  .page-header {
+    padding: 2rem 0 3rem;
+    border-bottom: 1px solid var(--gray-800);
+    text-align: center;
+  }
+
+  .back-link {
+    display: inline-block;
+    margin-bottom: 2rem;
+    color: var(--gray-400);
+    text-decoration: none;
+  }
+
+  .back-link:hover {
+    color: var(--accent-dark);
+  }
+
+  .section-label {
+    color: var(--accent-dark);
+    font-size: var(--text-sm);
+  }
+
+  h1 {
+    margin: 0.75rem 0;
+    color: var(--gray-100);
+    font-size: var(--text-3xl);
+  }
+
+  .page-header > p:last-child {
+    color: var(--gray-300);
+    font-size: var(--text-md);
+  }
+
+  @media (min-width: 50em) {
+    .page-header {
+      padding: 3rem 0 4rem;
+    }
+
+    h1 {
+      font-size: var(--text-5xl);
+    }
+  }
+</style>
