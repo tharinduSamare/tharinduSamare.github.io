@@ -214,7 +214,7 @@ const isCurrentPage = (href: string) => {
 				'.link[data-section]'
 			);
 
-		const sections = ['career', 'projects', 'about']
+		const sections = ['career', 'projects', 'community', 'about']
 			.map((id) => document.getElementById(id))
 			.filter(
 				(section): section is HTMLElement =>
@@ -247,13 +247,25 @@ const isCurrentPage = (href: string) => {
 				return;
 			}
 
-			const scrollPosition = window.scrollY + 180;
+			const scrollPosition = window.scrollY + 80;
 
 			let activeSection = '';
 
-			for (const section of sections) {
-				if (section.offsetTop <= scrollPosition) {
+			for (let i = 0; i < sections.length; i++) {
+				const section = sections[i];
+				const nextSection = sections[i + 1];
+
+				const sectionStart = section.offsetTop - 80;
+				const sectionEnd = nextSection
+					? nextSection.offsetTop - 80
+					: Infinity;
+
+				if (
+					scrollPosition >= sectionStart &&
+					scrollPosition < sectionEnd
+				) {
 					activeSection = section.id;
+					break;
 				}
 			}
 
