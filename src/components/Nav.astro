@@ -311,6 +311,49 @@ const isCurrentPage = (href: string) => {
 		});
 	}
 
+
+	/*
+	* Scroll to top when clicking the navigation
+	* link for the page we are already viewing.
+	*/
+	const pageNav = document.querySelector('nav:not(.home-nav)');
+
+	if (pageNav) {
+		const normalizePath = (path: string) =>
+			path.endsWith('/') ? path : `${path}/`;
+
+		const currentPath = normalizePath(window.location.pathname);
+
+		const pageLinks =
+			pageNav.querySelectorAll<HTMLAnchorElement>('.link');
+
+		pageLinks.forEach((link) => {
+			const linkPath = normalizePath(
+				new URL(link.href).pathname
+			);
+
+			if (linkPath === currentPath) {
+				link.addEventListener('click', (event) => {
+					event.preventDefault();
+
+					window.scrollTo({
+						top: 0,
+						behavior: 'smooth',
+					});
+
+					// Close the mobile menu if it is open.
+					const menu =
+						document.getElementById('menu-content');
+
+					if (menu) {
+						menu.hidden = true;
+					}
+				});
+			}
+		});
+	}
+
+
 	const topActions =
 		document.querySelector<HTMLElement>('.top-actions');
 
